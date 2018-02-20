@@ -12,7 +12,7 @@ render() {
       <Navbar fluid collapseOnSelect>
         <Navbar.Header>
           <Navbar.Brand>
-            <Link to="/">Dr. Rachel Graefe-Anderson</Link>
+            <Link to="/">Home Page</Link>
           </Navbar.Brand>
           <Navbar.Toggle />
         </Navbar.Header>

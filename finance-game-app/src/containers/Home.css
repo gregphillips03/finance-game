@@ -11,3 +11,12 @@
 .Home .lander p {
   color: #999;
 }
+
+.Home .lander-robot img {
+	width: 25%;
+	height: 25%;
+	display: block;
+	margin-right: auto; 
+	margin-left: auto; 
+	padding: 0 0 80px; 
+}

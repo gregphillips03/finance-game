@@ -2,3 +2,8 @@
   padding-top: 100px;
   text-align: center;
 }
+
+.error-bucket img{
+	width: 25%;
+	height: 25%;
+}
