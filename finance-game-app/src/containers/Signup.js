@@ -23,13 +23,18 @@ export default class Signup extends Component {
       password: "",
       confirmPassword: "",
       confirmationCode: "",
-      newUser: null
+      newUser: null, 
+      touched: {
+        email: false, 
+        password: false,
+        confirm: false,
+      },
     };
   }
 
   validateForm() {
     var emailPattern = /[a-zA-Z0-9]+@mail.umw.edu/; 
-    var passwordPattern = /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/;
+    var passwordPattern = /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{8,})/;
     return (
       this.state.email.length > 0 &&
       emailPattern.test(this.state.email) &&
@@ -37,6 +42,67 @@ export default class Signup extends Component {
       passwordPattern.test(this.state.password) &&
       this.state.password === this.state.confirmPassword
     );
+  }
+
+  validateEmail(){
+    var emailPattern = /[a-zA-Z0-9]+@mail.umw.edu/; 
+    return (
+      this.state.email.length > 0 &&
+      emailPattern.test(this.state.email) 
+    );
+  }
+
+  validatePassword(){
+    var passwordPattern = /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{8,})/;
+    return (
+      this.state.password.length > 7 &&
+      passwordPattern.test(this.state.password)
+    );
+  }
+
+  validateConfirm(){
+    return(
+        this.state.password === this.state.confirmPassword && 
+        this.validatePassword());
+  }
+
+  getEmailValidationState(){
+    var value = this.validateEmail();  
+    if(value === true){
+      return "success"; 
+    } else if (value === false && this.state.touched["email"]){
+      return "error"; 
+    } else {
+      return "";
+    }
+  }
+
+  getPassValidationState(){
+    var value = this.validatePassword();  
+    if(value === true){
+      return "success"; 
+    } else if (value === false && this.state.touched["password"]){
+      return "error"; 
+    } else {
+      return "";
+    }
+  }
+
+  getConfValidationState(){
+    var value = this.validateConfirm();  
+    if(value === true){
+      return "success"; 
+    } else if (value === false && this.state.touched["confirm"]){
+      return "error"; 
+    } else {
+      return "";
+    }
+  }  
+
+  handleBlur = (field) => (evt) => {
+    this.setState({
+      touched: { ...this.state.touched, [field]: true},
+    });
   }
 
   validateConfirmationForm() {
@@ -161,30 +227,36 @@ authenticate(user, email, password) {
   renderForm() {
     return (
       <form onSubmit={this.handleSubmit}>
-        <FormGroup controlId="email" bsSize="large">
+        <FormGroup controlId="email" bsSize="large" validationState={this.getEmailValidationState()}>
           <ControlLabel>Email</ControlLabel>
-          <FormControl
-            autoFocus
-            type="email"
-            value={this.state.email}
-            onChange={this.handleChange}
-          />
+            <FormControl
+              autoFocus
+              type="email"
+              value={this.state.email}
+              onChange={this.handleChange}
+              onBlur={this.handleBlur('email')}
+            />
+          <FormControl.Feedback />
         </FormGroup>
-        <FormGroup controlId="password" bsSize="large">
+        <FormGroup controlId="password" bsSize="large" validationState ={this.getPassValidationState()}>
           <ControlLabel>Password</ControlLabel>
           <FormControl
             value={this.state.password}
             onChange={this.handleChange}
             type="password"
+            onBlur={this.handleBlur('password')}
           />
+          <FormControl.Feedback />
         </FormGroup>
-        <FormGroup controlId="confirmPassword" bsSize="large">
+        <FormGroup controlId="confirmPassword" bsSize="large" validationState ={this.getConfValidationState()}>
           <ControlLabel>Confirm Password</ControlLabel>
           <FormControl
             value={this.state.confirmPassword}
             onChange={this.handleChange}
             type="password"
+            onBlur={this.handleBlur('confirm')}
           />
+          <FormControl.Feedback />
         </FormGroup>
         <LoaderButton
           block
