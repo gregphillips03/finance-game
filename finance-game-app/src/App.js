@@ -54,7 +54,7 @@ render() {
         <Navbar.Header>
           {this.state.isAuthenticated
             ? <Navbar.Text>
-                Signed in as: {this.state.userEmail}
+                Logged in as: <b>{this.state.userEmail}</b>
               </Navbar.Text>
             : <Navbar.Brand>
                 <Link to="/">Finance Game</Link>
