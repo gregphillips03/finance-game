@@ -7,6 +7,11 @@ import {
 } from "react-bootstrap";
 import LoaderButton from "../components/LoaderButton";
 import "./Signup.css";
+import {
+  AuthenticationDetails,
+  CognitoUserPool
+} from "amazon-cognito-identity-js";
+import config from "../config";
 
 export default class Signup extends Component {
   constructor(props) {
@@ -40,21 +45,89 @@ export default class Signup extends Component {
     });
   }
 
-  handleSubmit = async event => {
-    event.preventDefault();
+handleSubmit = async event => {
+  event.preventDefault();
 
-    this.setState({ isLoading: true });
+  this.setState({ isLoading: true });
 
-    this.setState({ newUser: "test" });
+  try {
+    const newUser = await this.signup(this.state.email, this.state.password);
+    this.setState({
+      newUser: newUser
+    });
+  } catch (e) {
+    alert("Error in handleSubmit");
+  }
 
+  this.setState({ isLoading: false });
+}
+
+handleConfirmationSubmit = async event => {
+  event.preventDefault();
+
+  this.setState({ isLoading: true });
+
+  try {
+    await this.confirm(this.state.newUser, this.state.confirmationCode);
+    await this.authenticate(
+      this.state.newUser,
+      this.state.email,
+      this.state.password
+    );
+
+    this.props.userHasAuthenticated(true);
+    this.props.history.push("/");
+  } catch (e) {
+    alert("Error in handleConfirmationSubmit");
     this.setState({ isLoading: false });
   }
+}
 
-  handleConfirmationSubmit = async event => {
-    event.preventDefault();
+signup(email, password) {
+  const userPool = new CognitoUserPool({
+    UserPoolId: config.cognito.USER_POOL_ID,
+    ClientId: config.cognito.APP_CLIENT_ID
+  });
 
-    this.setState({ isLoading: true });
-  }
+  return new Promise((resolve, reject) =>
+    userPool.signUp(email, password, [], null, (err, result) => {
+      if (err) {
+        reject(err);
+        alert("Error in Signup Promise"); 
+        return;
+      }
+      resolve(result.user);
+      alert("hit resolve");
+    })
+  );
+}
+
+confirm(user, confirmationCode) {
+  return new Promise((resolve, reject) =>
+    user.confirmRegistration(confirmationCode, true, function(err, result) {
+      if (err) {
+        reject(err);
+        return;
+      }
+      resolve(result);
+    })
+  );
+}
+
+authenticate(user, email, password) {
+  const authenticationData = {
+    Username: email,
+    Password: password
+  };
+  const authenticationDetails = new AuthenticationDetails(authenticationData);
+
+  return new Promise((resolve, reject) =>
+    user.authenticateUser(authenticationDetails, {
+      onSuccess: result => resolve(),
+      onFailure: err => reject(err)
+    })
+  );
+}
 
   renderConfirmationForm() {
     return (
