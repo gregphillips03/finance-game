@@ -3,7 +3,7 @@ import {
   HelpBlock,
   FormGroup,
   FormControl,
-  ControlLabel
+  ControlLabel, 
 } from "react-bootstrap";
 import LoaderButton from "../components/LoaderButton";
 import "./Signup.css";
@@ -12,6 +12,12 @@ import {
   CognitoUserPool
 } from "amazon-cognito-identity-js";
 import config from "../config";
+import {
+  InputGroup, 
+  InputGroupAddon, 
+  Button, 
+  Tooltip
+}from "reactstrap"; 
 
 export default class Signup extends Component {
   constructor(props) {
