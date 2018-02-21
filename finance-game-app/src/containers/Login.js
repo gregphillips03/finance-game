@@ -40,7 +40,7 @@ handleSubmit = async event => {
     this.props.userHasAuthenticated(true, this.state.email);
     this.props.history.push("/");
   } catch (e) {
-    alert(e);
+    alert("Password is probably incorrect");
     this.setState({ isLoading: false });
   }
 }

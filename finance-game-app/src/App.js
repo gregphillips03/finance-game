@@ -53,9 +53,11 @@ render() {
       <Navbar fluid collapseOnSelect>
         <Navbar.Header>
           {this.state.isAuthenticated
-            ? <Navbar.Text>
-                Logged in as: <b>{this.state.userEmail}</b>
-              </Navbar.Text>
+            ? [
+                <Navbar.Text>
+                  *NavBars Go Here*
+                </Navbar.Text> 
+              ]
             : <Navbar.Brand>
                 <Link to="/">Finance Game</Link>
               </Navbar.Brand>
@@ -65,7 +67,17 @@ render() {
         <Navbar.Collapse>
           <Nav pullRight>
             {this.state.isAuthenticated
-              ? <NavItem onClick={this.handleLogout}>Logout</NavItem>
+              ? [
+                  <Navbar.Text>
+                    Logged in as: <b>{this.state.userEmail}</b>
+                  </Navbar.Text>, 
+                  <Navbar.Text>
+                    |
+                  </Navbar.Text>, 
+                  <NavItem onClick={this.handleLogout}>
+                    Logout
+                  </NavItem>
+                ]
               : [
                   <RouteNavItem key={1} href="/signup">
                     Signup
