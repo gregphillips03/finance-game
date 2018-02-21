@@ -34,6 +34,7 @@ handleSubmit = async event => {
   try {
     await this.login(this.state.email, this.state.password);
     alert("Logged in");
+    this.props.userHasAuthenticated(true);
   } catch (e) {
     alert("Error in the Force!");
   }
