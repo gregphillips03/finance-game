@@ -72,7 +72,7 @@ export default class Signup extends Component {
       return "success"; 
     } else if (value === false && this.state.touched["email"] && this.state.email.length > 0){
       return "error"; 
-    } else {
+    }  else {
       return "";
     }
   }
@@ -95,7 +95,7 @@ export default class Signup extends Component {
     } else if (value === false && this.state.touched["confirmPassword"] && this.state.confirmPassword.length > 0){
       return "error"; 
     } else {
-      return "";
+      return ""; 
     }
   }  
 
