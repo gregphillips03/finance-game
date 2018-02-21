@@ -27,7 +27,7 @@ export default class Signup extends Component {
       touched: {
         email: false, 
         password: false,
-        confirm: false,
+        confirmPassword: false,
       },
     };
   }
@@ -70,7 +70,7 @@ export default class Signup extends Component {
     var value = this.validateEmail();  
     if(value === true){
       return "success"; 
-    } else if (value === false && this.state.touched["email"]){
+    } else if (value === false && this.state.touched["email"] && this.state.email.length > 0){
       return "error"; 
     } else {
       return "";
@@ -81,7 +81,7 @@ export default class Signup extends Component {
     var value = this.validatePassword();  
     if(value === true){
       return "success"; 
-    } else if (value === false && this.state.touched["password"]){
+    } else if (value === false && this.state.touched["password"] && this.state.password.length > 0){
       return "error"; 
     } else {
       return "";
@@ -92,7 +92,7 @@ export default class Signup extends Component {
     var value = this.validateConfirm();  
     if(value === true){
       return "success"; 
-    } else if (value === false && this.state.touched["confirm"]){
+    } else if (value === false && this.state.touched["confirmPassword"] && this.state.confirmPassword.length > 0){
       return "error"; 
     } else {
       return "";
@@ -254,7 +254,7 @@ authenticate(user, email, password) {
             value={this.state.confirmPassword}
             onChange={this.handleChange}
             type="password"
-            onBlur={this.handleBlur('confirm')}
+            onBlur={this.handleBlur('confirmPassword')}
           />
           <FormControl.Feedback />
         </FormGroup>
