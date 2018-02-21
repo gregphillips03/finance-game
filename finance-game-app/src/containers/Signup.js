@@ -12,12 +12,6 @@ import {
   CognitoUserPool
 } from "amazon-cognito-identity-js";
 import config from "../config";
-import {
-  InputGroup, 
-  InputGroupAddon, 
-  Button, 
-  Tooltip
-}from "reactstrap"; 
 
 export default class Signup extends Component {
   constructor(props) {
