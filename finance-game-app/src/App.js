@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import RouteNavItem from "./components/RouteNavItem";
 import { Nav, NavItem, Navbar } from "react-bootstrap";
 import "./App.css";
@@ -22,8 +22,8 @@ userHasAuthenticated = authenticated => {
 
 handleLogout = event => {
   signOutUser();
-
   this.userHasAuthenticated(false);
+  this.props.history.push("/login");
 }
 
 async componentDidMount() {
@@ -76,4 +76,4 @@ render() {
 }
 }
 
-export default App;
+export default withRouter(App);
