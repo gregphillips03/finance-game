@@ -28,11 +28,14 @@ export default class Signup extends Component {
   }
 
   validateForm() {
+    var emailPattern = /[a-zA-Z0-9]+@mail.umw.edu/; 
+    var passwordPattern = /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/;
     return (
       this.state.email.length > 0 &&
-      this.state.password.length > 0 &&
+      emailPattern.test(this.state.email) &&
+      this.state.password.length > 7 &&
+      passwordPattern.test(this.state.password) &&
       this.state.password === this.state.confirmPassword
-      //Need some error checking here to meet AWS min password policy
     );
   }
 
