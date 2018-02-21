@@ -32,6 +32,7 @@ export default class Signup extends Component {
       this.state.email.length > 0 &&
       this.state.password.length > 0 &&
       this.state.password === this.state.confirmPassword
+      //Need some error checking here to meet AWS min password policy
     );
   }
 
@@ -75,7 +76,7 @@ handleConfirmationSubmit = async event => {
       this.state.password
     );
 
-    this.props.userHasAuthenticated(true);
+    this.props.userHasAuthenticated(true, this.state.email);
     this.props.history.push("/");
   } catch (e) {
     alert("Error in handleConfirmationSubmit");
@@ -97,7 +98,6 @@ signup(email, password) {
         return;
       }
       resolve(result.user);
-      alert("hit resolve");
     })
   );
 }
