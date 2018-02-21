@@ -12,12 +12,14 @@ class App extends Component {
 
   this.state = {
     isAuthenticated: false,
-    isAuthenticating: true
+    isAuthenticating: true,
+    userEmail: "", 
   };
 }
 
-userHasAuthenticated = authenticated => {
+userHasAuthenticated = (authenticated, test) => {
   this.setState({ isAuthenticated: authenticated });
+  this.setState({ userEmail: test});
 }
 
 handleLogout = event => {
@@ -42,7 +44,7 @@ async componentDidMount() {
 render() {
   const childProps = {
     isAuthenticated: this.state.isAuthenticated,
-    userHasAuthenticated: this.userHasAuthenticated
+    userHasAuthenticated: this.userHasAuthenticated, 
   };
 
   return (
@@ -50,9 +52,14 @@ render() {
     <div className="App container">
       <Navbar fluid collapseOnSelect>
         <Navbar.Header>
-          <Navbar.Brand>
-            <Link to="/">Finance Game</Link>
-          </Navbar.Brand>
+          {this.state.isAuthenticated
+            ? <Navbar.Text>
+                Signed in as: {this.state.userEmail}
+              </Navbar.Text>
+            : <Navbar.Brand>
+                <Link to="/">Finance Game</Link>
+              </Navbar.Brand>
+          }
           <Navbar.Toggle />
         </Navbar.Header>
         <Navbar.Collapse>
