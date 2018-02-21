@@ -5,6 +5,7 @@ import { Nav, NavItem, Navbar } from "react-bootstrap";
 import "./App.css";
 import Routes from "./Routes";
 import { authUser, signOutUser } from "./libs/awsLib";
+import Footer from "./components/Footer"; 
 
 class App extends Component {
   constructor(props) {
@@ -90,6 +91,7 @@ render() {
         </Navbar.Collapse>
       </Navbar>
       <Routes childProps={childProps} />
+      <Footer />
     </div>
   );
 }
