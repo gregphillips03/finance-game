@@ -44,7 +44,7 @@ handleSubmit = async event => {
     sessionStorage.setItem('currentUserEmail', this.state.email); 
     this.props.history.push("/dashboard");
   } catch (e) {
-    alert("Invalid Authentication Credentials");
+    alert("We've detected a disturbance in the force. Your authentication credentials are invalid.");
     this.setState({ isLoading: false });
   }
 }
