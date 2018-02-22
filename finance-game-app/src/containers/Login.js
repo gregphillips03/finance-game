@@ -42,7 +42,7 @@ handleSubmit = async event => {
     await this.login(this.state.email, this.state.password);
     this.props.userHasAuthenticated(true, this.state.email);
     sessionStorage.setItem('currentUserEmail', this.state.email); 
-    this.props.history.push("/");
+    this.props.history.push("/dashboard");
   } catch (e) {
     alert("Invalid Authentication Credentials");
     this.setState({ isLoading: false });
