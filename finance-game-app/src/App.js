@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 import RouteNavItem from "./components/RouteNavItem";
-import { Nav, NavItem, Navbar } from "react-bootstrap";
+import { Nav, NavItem, Navbar, Badge } from "react-bootstrap";
 import "./App.css";
 import Routes from "./Routes";
 import { authUser, signOutUser } from "./libs/awsLib";
@@ -53,14 +53,16 @@ render() {
     !this.state.isAuthenticating &&
     <div className="App container">
       <Navbar fluid collapseOnSelect>
-        <Navbar.Header>
         <Nav pullLeft>
           {this.state.isAuthenticated
             ? [
                 <RouteNavItem key={1} href="/dashboard">
                   Dashboard
                 </RouteNavItem>,
-                <RouteNavItem key={2} href="/leaderboard">
+                <RouteNavItem key={2} href="/game">
+                  Play Game
+                </RouteNavItem>,
+                <RouteNavItem key={3} href="/leaderboard">
                   Leaderboard
                 </RouteNavItem>,
               ]
@@ -70,13 +72,12 @@ render() {
           }
           </Nav>
           <Navbar.Toggle />
-        </Navbar.Header>
         <Navbar.Collapse>
           <Nav pullRight>
             {this.state.isAuthenticated
               ? [
                   <Navbar.Text>
-                    Logged in as: <b>{this.state.userEmail}</b>
+                    Logged in as: <b>{this.state.userEmail} <Badge>12</Badge></b>
                   </Navbar.Text>, 
                   <Navbar.Text>
                     |
