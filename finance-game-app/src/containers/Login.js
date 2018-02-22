@@ -44,7 +44,7 @@ handleSubmit = async event => {
     sessionStorage.setItem('currentUserEmail', this.state.email); 
     this.props.history.push("/");
   } catch (e) {
-    alert("Password is probably incorrect");
+    alert("Invalid Authentication Credentials");
     this.setState({ isLoading: false });
   }
 }

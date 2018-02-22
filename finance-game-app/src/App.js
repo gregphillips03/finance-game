@@ -87,13 +87,13 @@ render() {
                   </NavItem>
                 ]
               : [
-                  <RouteNavItem key={3} href="/about">
+                  <RouteNavItem key={4} href="/about">
                     About
                   </RouteNavItem>,
-                  <RouteNavItem key={4} href="/signup">
+                  <RouteNavItem key={5} href="/signup">
                     Signup
                   </RouteNavItem>,
-                  <RouteNavItem key={5} href="/login">
+                  <RouteNavItem key={6} href="/login">
                     Login
                   </RouteNavItem>
                 ]}
