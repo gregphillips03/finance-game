@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./Dashboard.css";
+import { Label } from "react-bootstrap"; 
 
 export default class Dashboard extends Component {
   render() {
@@ -8,7 +9,7 @@ export default class Dashboard extends Component {
         <div className="lander">
           <h1>Dashboard</h1>
           <p>This is the Dashboard component being rendered to the DOM.</p>
-          <p>The Dashboard will show the user their progress throughout the game.</p>
+          <p>The Dashboard will <Label bsStyle="success">show</Label> the user their <Label bsStyle="success">progress</Label> throughout the game.</p>
           <p>This is where the user will be redirected to upon login.</p>
         </div>
       </div>
