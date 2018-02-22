@@ -77,7 +77,7 @@ render() {
             {this.state.isAuthenticated
               ? [
                   <Navbar.Text>
-                    Logged in as: <b>{this.state.userEmail} <Badge>12</Badge></b>
+                    Logged in as: <b>{this.state.userEmail} <Badge>Role</Badge></b>
                   </Navbar.Text>, 
                   <Navbar.Text>
                     |
