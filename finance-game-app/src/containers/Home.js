@@ -12,7 +12,7 @@ export default class Home extends Component {
           <p>A financial learning game to <Label bsStyle="success">improve</Label> your skills.</p>
         </div>
         <div className="lander-yoda">
-          <img src={Yoda} className="lander-robot" alt="alt image" />
+          <img src={Yoda} className="lander-yoda" alt="yoda" />
         </div>
       </div>
     );
