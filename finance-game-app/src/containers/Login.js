@@ -41,6 +41,7 @@ handleSubmit = async event => {
   try {
     await this.login(this.state.email, this.state.password);
     this.props.userHasAuthenticated(true, this.state.email);
+    sessionStorage.setItem('currentUserEmail', this.state.email); 
     this.props.history.push("/");
   } catch (e) {
     alert("Password is probably incorrect");

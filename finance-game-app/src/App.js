@@ -5,7 +5,7 @@ import { Nav, NavItem, Navbar } from "react-bootstrap";
 import "./App.css";
 import Routes from "./Routes";
 import { authUser, signOutUser } from "./libs/awsLib";
-import Footer from "./components/Footer"; 
+import Footer from "./components/Footer";
 
 class App extends Component {
   constructor(props) {
@@ -32,7 +32,7 @@ handleLogout = event => {
 async componentDidMount() {
   try {
     if (await authUser()) {
-      this.userHasAuthenticated(true);
+      this.userHasAuthenticated(true, sessionStorage.getItem('currentUserEmail'));
     }
   }
   catch(e) {
@@ -46,6 +46,7 @@ render() {
   const childProps = {
     isAuthenticated: this.state.isAuthenticated,
     userHasAuthenticated: this.userHasAuthenticated, 
+    userEmail: this.userEmail,
   };
 
   return (
@@ -53,16 +54,21 @@ render() {
     <div className="App container">
       <Navbar fluid collapseOnSelect>
         <Navbar.Header>
+        <Nav pullLeft>
           {this.state.isAuthenticated
             ? [
-                <Navbar.Text>
-                  *NavBars Go Here*
-                </Navbar.Text> 
+                <RouteNavItem key={1} href="/dashboard">
+                  Dashboard
+                </RouteNavItem>,
+                <RouteNavItem key={2} href="/leaderboard">
+                  Leaderboard
+                </RouteNavItem>,
               ]
             : <Navbar.Brand>
                 <Link to="/">Finance Game</Link>
               </Navbar.Brand>
           }
+          </Nav>
           <Navbar.Toggle />
         </Navbar.Header>
         <Navbar.Collapse>
@@ -80,10 +86,13 @@ render() {
                   </NavItem>
                 ]
               : [
-                  <RouteNavItem key={1} href="/signup">
+                  <RouteNavItem key={3} href="/about">
+                    About
+                  </RouteNavItem>,
+                  <RouteNavItem key={4} href="/signup">
                     Signup
                   </RouteNavItem>,
-                  <RouteNavItem key={2} href="/login">
+                  <RouteNavItem key={5} href="/login">
                     Login
                   </RouteNavItem>
                 ]}
