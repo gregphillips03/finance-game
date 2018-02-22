@@ -26,7 +26,7 @@ userHasAuthenticated = (authenticated, test) => {
 handleLogout = event => {
   signOutUser();
   this.userHasAuthenticated(false);
-  this.props.history.push("/login");
+  this.props.history.push("/logout");
 }
 
 async componentDidMount() {

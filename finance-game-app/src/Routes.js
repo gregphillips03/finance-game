@@ -3,6 +3,7 @@ import { Route, Switch } from "react-router-dom";
 import Home from "./containers/Home";
 import Login from "./containers/Login";
 import NotFound from "./containers/NotFound";
+import Goodbye from "./containers/Goodbye";
 import AppliedRoute from "./components/AppliedRoute";
 import Signup from "./containers/Signup";
 import Dashboard from "./containers/Dashboard"; 
@@ -17,6 +18,7 @@ export default ({ childProps }) =>
     <AppliedRoute path="/dashboard" exact component={Dashboard} props={childProps} />
     <AppliedRoute path="/leaderboard" exact component={Leaderboard} props={childProps} />
     <AppliedRoute path="/game" exact component={Game} props={childProps} />
+    <AppliedRoute path="/logout" exact component={Goodbye} props={childProps} />
     { /* Finally, catch all unmatched routes */ }
     <Route component={NotFound} />
   </Switch>;
