@@ -1,9 +1,10 @@
 .NotFound {
-  padding-top: 100px;
+  padding-top: 25px;
   text-align: center;
 }
 
 .error-bucket img{
 	width: 25%;
 	height: 25%;
+	padding-top: 20px; 
 }

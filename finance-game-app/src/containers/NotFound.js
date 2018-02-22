@@ -1,11 +1,14 @@
 import React from "react";
 import "./NotFound.css";
-import Robot from "../images/robot-msg-error.png"; 
+import Vader from "../images/vader-helmet.png";
+import { Label } from "react-bootstrap"; 
+
 
 export default () =>
   <div className="NotFound">
-    <h3>Sorry, that page cannot be found!</h3>
+    <h3>I find your lack of navigation disturbing...</h3>
     <div className="error-bucket">
-    	<img src={Robot} className="error" alt="404 Error" />
+    	<img src={Vader} className="error" alt="404 Error" />
     </div>
+    <h3>The <Label>404</Label> is strong in you</h3>
   </div>;

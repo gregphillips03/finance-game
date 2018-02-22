@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./Home.css";
-import RobotWaving from "../images/robot-waving-hi.png"; 
+import Yoda from "../images/yoda-defend.png"; 
+import { Label } from "react-bootstrap";  
 
 export default class Home extends Component {
   render() {
@@ -8,10 +9,10 @@ export default class Home extends Component {
       <div className="Home">
         <div className="lander">
           <h1>Finance Game</h1>
-          <p>A financial learning game to improve your skills.</p>
+          <p>A financial learning game to <Label bsStyle="success">improve</Label> your skills.</p>
         </div>
-        <div className="lander-robot">
-          <img src={RobotWaving} className="lander-robot" alt="robot waving hi" />
+        <div className="lander-yoda">
+          <img src={Yoda} className="lander-robot" alt="alt image" />
         </div>
       </div>
     );
