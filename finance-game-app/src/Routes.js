@@ -9,6 +9,7 @@ import Signup from "./containers/Signup";
 import Dashboard from "./containers/Dashboard"; 
 import Leaderboard from "./containers/Leaderboard";
 import Game from "./containers/Game"; 
+import Faction from "./containers/Faction";
 
 export default ({ childProps }) =>
   <Switch>
@@ -19,6 +20,7 @@ export default ({ childProps }) =>
     <AppliedRoute path="/leaderboard" exact component={Leaderboard} props={childProps} />
     <AppliedRoute path="/game" exact component={Game} props={childProps} />
     <AppliedRoute path="/logout" exact component={Goodbye} props={childProps} />
+    <AppliedRoute path="/faction" exact component={Faction} props={childProps} />
     { /* Finally, catch all unmatched routes */ }
     <Route component={NotFound} />
   </Switch>;

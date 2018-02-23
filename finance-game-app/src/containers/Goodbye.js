@@ -3,7 +3,6 @@ import "./Goodbye.css";
 import YodaMad from "../images/yoda-mad.gif";
 import { Label } from "react-bootstrap"; 
 
-
 export default () =>
   <div className="Goodbye">
     <h3>If Logout you must, sorry to see you go we are...</h3>

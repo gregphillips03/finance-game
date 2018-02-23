@@ -1,0 +1,81 @@
+.Faction .lander {
+  padding: 10px 0;
+  text-align: center;
+}
+
+.Faction .lander h1 {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+}
+
+.Faction .lander p {
+  color: #999;
+}
+
+/* Create two equal columns that float next to each other */
+.column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    text-align: center; 
+}
+
+.column h2 {
+	font-family: "Open Sans", sans-serif;
+	font-weight: 600;
+}
+
+.column p {
+	color: #999;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+    .column {
+        width: 100%;
+    }
+}
+
+.card-resistance img {
+	display: block;
+	margin-right: auto; 
+	margin-left: auto; 
+	height: 200px; 
+	width: 200px;
+}
+
+.card-resistance {
+	box-shadow: 4px 8px 16px 4px rgba(0,0,0,0.2); 
+	transition: 0.5s;
+	padding: 5px 5px 5px 5px;
+}
+
+.card-resistance:hover{
+	box-shadow: 8px 16px 32px 8px rgba(80,220,251,1);	
+}
+
+.card-empire img {
+	display: block;
+	margin-right: auto; 
+	margin-left: auto; 
+	height: 200px; 
+	width: 200px;
+}
+
+.card-empire {
+	box-shadow: 4px 8px 16px 4px rgba(0,0,0,0.2); 
+	transition: 0.5s;
+	padding: 5px 5px 5px 5px;
+}
+
+.card-empire:hover{
+	box-shadow: 8px 16px 32px 8px rgba(250,20,20,1);	
+}
+

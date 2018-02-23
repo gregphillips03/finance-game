@@ -14,9 +14,16 @@ class App extends Component {
   this.state = {
     isAuthenticated: false,
     isAuthenticating: true,
-    userEmail: "", 
+    userEmail: "",
+    isOpen: false, 
   };
 }
+
+  toggleModal = () => {
+    this.setState({
+      isOpen: !this.state.isOpen
+    });
+  }
 
 userHasAuthenticated = (authenticated, test) => {
   this.setState({ isAuthenticated: authenticated });
