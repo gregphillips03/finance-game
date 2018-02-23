@@ -15,7 +15,7 @@
 /* Create two equal columns that float next to each other */
 .column {
     float: left;
-    width: 50%;
+    width: 25%;
     padding: 10px;
     text-align: center; 
 }
@@ -78,5 +78,41 @@
 
 .card-empire:hover{
 	box-shadow: 8px 16px 32px 8px rgba(250,20,20,1);	
+}
+
+.card-jedi img {
+	display: block;
+	margin-right: auto; 
+	margin-left: auto; 
+	height: 200px; 
+	width: 200px;
+}
+
+.card-jedi {
+	box-shadow: 4px 8px 16px 4px rgba(0,0,0,0.2); 
+	transition: 0.5s;
+	padding: 5px 5px 5px 5px;
+}
+
+.card-jedi:hover{
+	box-shadow: 8px 16px 32px 8px rgba(67,200,50,1);	
+}
+
+.card-rogue img {
+	display: block;
+	margin-right: auto; 
+	margin-left: auto; 
+	height: 200px; 
+	width: 200px;
+}
+
+.card-rogue {
+	box-shadow: 4px 8px 16px 4px rgba(0,0,0,0.2); 
+	transition: 0.5s;
+	padding: 5px 5px 5px 5px;
+}
+
+.card-rogue:hover{
+	box-shadow: 8px 16px 32px 8px rgba(184,138,46,1);	
 }
 

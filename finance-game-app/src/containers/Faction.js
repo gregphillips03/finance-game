@@ -3,6 +3,8 @@ import "./Faction.css";
 import { Label } from "react-bootstrap"; 
 import Resist from "../images/resistance-logo.png";
 import Empire from "../images/empire-logo.png";
+import Jedi from "../images/jedi-logo.png";
+import Rogue from "../images/rogue-logo.png";
 import {Button} from "react-bootstrap"; 
 
 export default class Faction extends Component {
@@ -31,6 +33,22 @@ export default class Faction extends Component {
             <img src={Empire} alt="empire-logo"/>
             <h2>Galactic Empire</h2>
             <Button bsSize="large" block><p>Join the Dark Side</p></Button>
+          </div>
+          </div>
+
+          <div className="column" id="column-click">
+          <div className="card-jedi">
+            <img src={Jedi} alt="jedi-logo"/>
+            <h2>Jedi Order</h2>
+            <Button bsSize="large" block><p>Join the Jedi Order</p></Button>
+          </div>
+          </div>
+
+          <div className="column" id="column-click">
+          <div className="card-rogue">
+            <img src={Rogue} alt="rogue-logo"/>
+            <h2>Rogue</h2>
+            <Button bsSize="large" block><p>Go Rogue</p></Button>
           </div>
           </div>
 
