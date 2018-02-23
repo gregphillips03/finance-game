@@ -27,6 +27,7 @@
 
 .column p {
 	color: #999;
+	font-weight: 600;
 }
 
 /* Clear floats after the columns */
