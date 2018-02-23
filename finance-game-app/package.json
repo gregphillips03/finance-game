@@ -4,11 +4,13 @@
   "private": true,
   "dependencies": {
     "amazon-cognito-identity-js": "^2.0.1",
+    "modal": "^1.2.0",
     "react": "^16.2.0",
     "react-bootstrap": "^0.32.1",
     "react-bootstrap-alert": "^1.0.7",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.7",
+    "react-responsive": "^4.0.4",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.1",
     "reactstrap": "^5.0.0-beta",
