@@ -12,7 +12,7 @@ export default class Faction extends Component {
           <h1>Faction</h1>
           <p>This is the Faction component being rendered to the DOM.</p>
           <p>The Faction page will allow the user to pick which side they want to <Label bsStyle="success">fight</Label> with during their current session.</p>
-          <p>This is where the user will eventually be redirected to upon login.</p>
+          <p>This is where the user will land after they login.</p>
         </div>
 
         <div className="row">
