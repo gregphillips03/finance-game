@@ -3,8 +3,9 @@
   text-align: center;
 }
 
-.Home .lander h1 {
-  font-family: "Open Sans", sans-serif;
+.Home .lander h2 {
+  font-family: "jedi";
+  src: local("jedi"), url(../fonts/Starjedi.ttf) format('ttf');
   font-weight: 600;
 }
 
@@ -19,4 +20,9 @@
 	margin-right: auto; 
 	margin-left: auto; 
 	padding: 0 0 10px; 
+}
+
+.Home .lander h1 {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
 }
