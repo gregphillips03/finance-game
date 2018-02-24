@@ -7,7 +7,7 @@ export default class Footer extends React.Component{
 			<Grid>
 				<hr />
 				<footer>
-					<p align='center'>The University of Mary Washington College of Business</p>
+					<p align='center'> <i class="fa fa-institution"></i> The University of Mary Washington | College of Business</p>
 				</footer>
 			</Grid>
 			);
