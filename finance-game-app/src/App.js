@@ -84,7 +84,10 @@ render() {
             {this.state.isAuthenticated
               ? [
                   <Navbar.Text>
-                    Logged in as: <b>{this.state.userEmail} <Badge>Role</Badge></b>
+                    Logged in as: <b>{this.state.userEmail}  
+                    <Badge>
+                      {sessionStorage.getItem('currentUserFaction')}
+                    </Badge></b>
                   </Navbar.Text>, 
                   <Navbar.Text>
                     |
