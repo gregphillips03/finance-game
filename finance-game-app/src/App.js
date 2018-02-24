@@ -28,6 +28,8 @@ handleLogout = event => {
   signOutUser();
   this.userHasAuthenticated(false);
   this.props.history.push("/logout");
+  sessionStorage.removeItem('currentUserEmail'); 
+  sessionStorage.removeItem('currentUserFaction'); 
 }
 
 async componentDidMount() {
