@@ -1,0 +1,15 @@
+.boards {
+	display: flex;
+	justify-content: center; 
+}
+
+.boards li {
+	margin: 10px; 
+	font-weight: bold; 
+	cursor: pointer;
+	list-style-type: none; 
+}
+
+.boards ul {
+	padding: 0;
+}
