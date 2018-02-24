@@ -5,7 +5,6 @@ import Resist from "../images/resistance-logo.png";
 import Empire from "../images/empire-logo.png";
 import Jedi from "../images/jedi-logo.png";
 import Rogue from "../images/rogue-logo.png";
-import { Button } from "react-bootstrap"; 
 
 export default class Faction extends Component {
   constructor(props) {
@@ -34,35 +33,35 @@ handleClick(faction){
 
         <div className="row">
 
-          <div className="column" id="column-click">
+          <div className="column" id="column-click" onClick={()=>this.handleClick('Rebel')}>
           <div className="card-resistance">
             <img src={Resist} alt="resistance-logo"/>
             <h2>Rebel Alliance</h2>
-          <Button bsSize="large" block onClick={()=>this.handleClick('Rebel')}><p>Join the Resistance</p></Button>
+            <p>Join the Resistance</p>
           </div>
           </div>
 
-          <div className="column" id="column-click">
+          <div className="column" id="column-click" onClick={()=>this.handleClick('Empire')}>
           <div className="card-empire">
             <img src={Empire} alt="empire-logo"/>
             <h2>Galactic Empire</h2>
-            <Button bsSize="large" block onClick={()=>this.handleClick('Empire')}><p>Join the Dark Side</p></Button>
+            <p>Join the Dark Side</p>
           </div>
           </div>
 
-          <div className="column" id="column-click">
+          <div className="column" id="column-click" onClick={()=>this.handleClick('Jedi')}>
           <div className="card-jedi">
             <img src={Jedi} alt="jedi-logo"/>
             <h2>Jedi Order</h2>
-            <Button bsSize="large" block onClick={()=>this.handleClick('Jedi')}><p>Join the Jedi Order</p></Button>
+            <p>Join the Jedi Order</p>
           </div>
           </div>
 
-          <div className="column" id="column-click">
+          <div className="column" id="column-click" onClick={()=>this.handleClick('Rogue')}>
           <div className="card-rogue">
             <img src={Rogue} alt="rogue-logo"/>
             <h2>Rogue</h2>
-            <Button bsSize="large" block onClick={()=>this.handleClick('Rogue')}><p>Go Rogue</p></Button>
+            <p>Go Rogue</p>
           </div>
           </div>
 
