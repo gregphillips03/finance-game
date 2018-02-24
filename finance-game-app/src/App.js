@@ -19,12 +19,6 @@ class App extends Component {
   };
 }
 
-  toggleModal = () => {
-    this.setState({
-      isOpen: !this.state.isOpen
-    });
-  }
-
 userHasAuthenticated = (authenticated, test) => {
   this.setState({ isAuthenticated: authenticated });
   this.setState({ userEmail: test});
@@ -72,6 +66,9 @@ render() {
                 <RouteNavItem key={3} href="/leaderboard">
                   Leaderboard
                 </RouteNavItem>,
+                <RouteNavItem key={4} href="/faction">
+                  Faction
+                </RouteNavItem>,
               ]
             : <Navbar.Brand>
                 <Link to="/">Finance Game</Link>
@@ -84,7 +81,7 @@ render() {
             {this.state.isAuthenticated
               ? [
                   <Navbar.Text>
-                    Logged in as: <b>{this.state.userEmail}  
+                    Logged in as: <b>{this.state.userEmail + " "}  
                     <Badge>
                       {sessionStorage.getItem('currentUserFaction')}
                     </Badge></b>
@@ -97,13 +94,13 @@ render() {
                   </NavItem>
                 ]
               : [
-                  <RouteNavItem key={4} href="/about">
+                  <RouteNavItem key={5} href="/about">
                     About
                   </RouteNavItem>,
-                  <RouteNavItem key={5} href="/signup">
+                  <RouteNavItem key={6} href="/signup">
                     Signup
                   </RouteNavItem>,
-                  <RouteNavItem key={6} href="/login">
+                  <RouteNavItem key={7} href="/login">
                     Login
                   </RouteNavItem>
                 ]}

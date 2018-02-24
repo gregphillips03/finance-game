@@ -28,7 +28,7 @@ handleClick(faction){
         <div className="lander">
           <h1>Choose A Faction</h1>
           <p>Choose a faction to <Label bsStyle="danger">fight</Label> for.
-          You can change your faction each time you log in.</p>
+          You can change your faction each time you log in, or just by visiting this page.</p>
           <p>Be sure to check the <Label>Leadboard</Label> to see which faction is winning.</p>
         </div>
 
