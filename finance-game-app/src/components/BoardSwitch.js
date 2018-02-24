@@ -46,7 +46,6 @@ export default class BoardSwitch extends Component {
 	}
 
 	render(){
-		var boards = ['Players', 'Factions']; 
 		return(
 			<div>
 				<SelectedBoard selectedBoard={this.state.selectedBoard} onSelect={this.updateBoard} />
