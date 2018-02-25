@@ -10,6 +10,10 @@ import Dashboard from "./containers/Dashboard";
 import Leaderboard from "./containers/Leaderboard";
 import Game from "./containers/Game"; 
 import Faction from "./containers/Faction";
+import Arena from "./containers/Arena"; 
+import LightningRound from "./containers/LightningRound"; 
+import Campaign from "./containers/Campaign"; 
+import Crafting from "./containers/Crafting"; 
 
 export default ({ childProps }) =>
   <Switch>
@@ -21,6 +25,10 @@ export default ({ childProps }) =>
     <AppliedRoute path="/game" exact component={Game} props={childProps} />
     <AppliedRoute path="/logout" exact component={Goodbye} props={childProps} />
     <AppliedRoute path="/faction" exact component={Faction} props={childProps} />
+    <AppliedRoute path="/game/arena" exact component={Arena} props={childProps} />
+    <AppliedRoute path="/game/lightning" exact component={LightningRound} props={childProps} />
+    <AppliedRoute path="/game/campaign" exact component={Campaign} props={childProps} />
+    <AppliedRoute path="/game/crafting" exact component={Crafting} props={childProps}/>
     { /* Finally, catch all unmatched routes */ }
     <Route component={NotFound} />
   </Switch>;

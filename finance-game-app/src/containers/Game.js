@@ -18,7 +18,7 @@ export default class Dashboard extends Component {
 
 handleClick(gameState){
   sessionStorage.setItem('currentGameState', gameState); 
-  this.props.history.push("/dashboard");  
+  this.props.history.push("/game/" + sessionStorage.getItem('currentGameState'));  
 }
 
   render() {
@@ -33,7 +33,7 @@ handleClick(gameState){
 
         <div className="row">
 
-          <div className="column" id="column-click" onClick={()=>this.handleClick('Arena')}>
+          <div className="column" id="column-click" onClick={()=>this.handleClick('arena')}>
           <div className="card-arena">
             <img src={Arena} alt="arena-logo"/>
             <h2>Arena</h2>
@@ -41,7 +41,7 @@ handleClick(gameState){
           </div>
           </div>
 
-          <div className="column" id="column-click" onClick={()=>this.handleClick('Timer')}>
+          <div className="column" id="column-click" onClick={()=>this.handleClick('lightning')}>
           <div className="card-timer">
             <img src={Timer} alt="timer-logo"/>
             <h2>Lightning Round</h2>
@@ -49,7 +49,7 @@ handleClick(gameState){
           </div>
           </div>
 
-          <div className="column" id="column-click" onClick={()=>this.handleClick('Campaign')}>
+          <div className="column" id="column-click" onClick={()=>this.handleClick('campaign')}>
           <div className="card-campaign">
             <img src={Campaign} alt="campaign-logo"/>
             <h2>Campaign</h2>
@@ -57,7 +57,7 @@ handleClick(gameState){
           </div>
           </div>
 
-          <div className="column" id="column-click" onClick={()=>this.handleClick('Crafting')}>
+          <div className="column" id="column-click" onClick={()=>this.handleClick('crafting')}>
           <div className="card-crafting">
             <img src={Gears} alt="crafting-logo"/>
             <h2>Crafting</h2>
