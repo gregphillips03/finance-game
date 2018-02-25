@@ -6,6 +6,7 @@ import Empire from "../images/empire-logo.png";
 import Jedi from "../images/jedi-logo.png";
 import Rogue from "../images/rogue-logo.png";
 
+
 export default class Faction extends Component {
   constructor(props) {
     super(props);
