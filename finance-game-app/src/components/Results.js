@@ -2,8 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import tally from '../helpers/tally';
 import { Button, ButtonToolbar, Label } from 'react-bootstrap'; 
+import Vader from "../images/vader-helmet.png";
 
 const Results = ({ userAnswers, score, restartQuiz }) => {
+
   const triesTotal = tally(userAnswers);
   const oneTries = triesTotal[1] && <div><strong>{triesTotal[1]}</strong> on the <Label bsStyle="success">first</Label> try.</div>;
   const twoTries = triesTotal[2] && <div><strong>{triesTotal[2]}</strong> on the <Label bsStyle="info">second</Label> try.</div>;
@@ -12,6 +14,9 @@ const Results = ({ userAnswers, score, restartQuiz }) => {
   return (
     <div className="results-container">
       <h2>Round Results</h2>
+      <div className="success-factor">
+      <img src={Vader} className="success-factor-image" alt="success factor" />
+      </div>
       <div>You answered...</div>
       {oneTries}
       {twoTries}
