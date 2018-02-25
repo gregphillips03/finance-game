@@ -27,7 +27,8 @@ handleClick(gameState){
         <div className="lander">
           <h1>Game</h1>
           <p>This is the Game component being rendered to the DOM.
-            The Game is the core of the application where the user will answer questions and <Label bsStyle="success">gain XP</Label>.</p>
+            The Game is the core of the application where the user will answer questions 
+            and <Label bsStyle="success">gain XP</Label>.</p>
           <p>The Game component will interact heavily with the backend database.</p>
         </div>
 

@@ -1,3 +1,7 @@
+:root {
+	--shadow-background-on-hover: 8px 16px 32px 8px rgba(0,0,0,0.4);
+}
+
 .Game .lander {
   padding: 10px 0;
   text-align: center;
@@ -59,7 +63,7 @@
 }
 
 .card-arena:hover{
-	box-shadow: 8px 16px 32px 8px rgba(80,220,251,1);	
+	box-shadow: var(--shadow-background-on-hover);	
 }
 
 .card-timer img {
@@ -77,7 +81,7 @@
 }
 
 .card-timer:hover{
-	box-shadow: 8px 16px 32px 8px rgba(80,220,251,1);	
+	box-shadow: var(--shadow-background-on-hover);		
 }
 
 .card-campaign img {
@@ -95,7 +99,7 @@
 }
 
 .card-campaign:hover{
-	box-shadow: 8px 16px 32px 8px rgba(80,220,251,1);	
+	box-shadow: var(--shadow-background-on-hover);		
 }
 
 .card-crafting img {
@@ -113,5 +117,5 @@
 }
 
 .card-crafting:hover{
-	box-shadow: 8px 16px 32px 8px rgba(80,220,251,1);	
+	box-shadow: var(--shadow-background-on-hover);		
 }
