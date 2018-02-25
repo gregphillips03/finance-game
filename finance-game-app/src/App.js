@@ -29,7 +29,7 @@ handleLogout = event => {
   this.userHasAuthenticated(false);
   this.props.history.push("/logout");
   sessionStorage.removeItem('currentUserEmail'); 
-  sessionStorage.removeItem('currentUserFaction'); 
+  sessionStorage.removeItem('currentUserFaction');
 }
 
 async componentDidMount() {
