@@ -11,7 +11,7 @@ const Results = ({ userAnswers, score, restartQuiz }) => {
   const fourTries = triesTotal[4] && <div><strong>{triesTotal[4]}</strong> on the <Label bsStyle="danger">fourth</Label> try.</div>;
   return (
     <div className="results-container">
-      <h2>Quiz Results</h2>
+      <h2>Round Results</h2>
       <div>You answered...</div>
       {oneTries}
       {twoTries}

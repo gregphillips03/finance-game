@@ -15,7 +15,6 @@ class App extends Component {
     isAuthenticated: false,
     isAuthenticating: true,
     userEmail: "",
-    isOpen: false, 
   };
 }
 
