@@ -30,6 +30,7 @@ handleLogout = event => {
   this.props.history.push("/logout");
   sessionStorage.removeItem('currentUserEmail'); 
   sessionStorage.removeItem('currentUserFaction');
+  sessionStorage.removeItem('currentGameState'); 
 }
 
 async componentDidMount() {

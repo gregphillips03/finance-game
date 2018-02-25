@@ -5,7 +5,7 @@ var PropTypes = require('prop-types');
 //stateless functional component being passed props, not having to worry about the 'this' keyword
 //note the use of the arrow function for ES6
 function SelectedBoard(props){
-	var boards = ['Players', 'Factions', 'Questions']; 
+	var boards = ['Players', 'Factions', 'Arena', 'Lightning']; 
 	return(
 			<ul className='boards'>
 				{boards.map((board) => {
