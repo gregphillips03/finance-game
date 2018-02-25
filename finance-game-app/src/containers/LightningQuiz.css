@@ -6,15 +6,6 @@ html, body, #app, div[data-reactroot] {
   height: 100%;
 }
 
-body {
-  width: 100%;
-  font-family: "Open Sans", sans-serif;
-  color: #999;
-  margin: 0;
-  padding: 0;
-  overflow-y: scroll;
-}
-
 header {
   display: flex;
   justify-content: space-between;
@@ -71,7 +62,7 @@ code {
 }
 
 .question-answer {
-  list-style-type: disc;
+  list-style-type: none;
   cursor: pointer;
   padding: .3em;
   margin-bottom: .3em;
@@ -199,6 +190,7 @@ code {
   backface-visibility: hidden;
   -webkit-font-smoothing: antialiased;
   display: none;
+  overflow-y: hidden; 
 }
 
 .correct-modal.modal-enter {
