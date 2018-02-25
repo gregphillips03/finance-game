@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import QuestionList from './QuestionList';
+import CountdownClock from 'react-countdown-clock'
 
-const Quiz = ({ step, questions, totalQuestions, score, handleAnswerClick }) => {
+const Quiz = ({ step, questions, totalQuestions, score, handleAnswerClick, noTimeLeft }) => {
   return (
     <div className="wrapper">
       <header>
@@ -11,7 +12,9 @@ const Quiz = ({ step, questions, totalQuestions, score, handleAnswerClick }) => 
           <div className="question-number">{step}</div>
           <div className="description">of <span>{totalQuestions}</span></div>
         </div>
-        <h1>Lightning Round</h1>
+        <div className="clock-timer">
+          <CountdownClock size={200} onComplete={noTimeLeft} seconds={15} />
+        </div>
         <div className="score-container">
           <h2>Your Score</h2>
           <div className="score">{score}</div>

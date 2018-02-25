@@ -14,11 +14,13 @@ class QuizApp extends Component {
       userAnswers: [],
       maxQuestions: 0,
       step: 1,
-      score: 0
+      score: 0,
+      timeleft: true,
     };
 
     this.handleAnswerClick = this.handleAnswerClick.bind(this);
     this.nextStep = this.nextStep.bind(this);
+    this.noTimeLeft = this.noTimeLeft.bind(this); 
   }
 
   componentWillMount() {
@@ -37,6 +39,10 @@ class QuizApp extends Component {
     });
   }
 
+  noTimeLeft(){
+    this.setState({timeleft: false});
+  }
+
   handleAnswerClick(e) {
     const { questions, step, userAnswers } = this.state;
     const isCorrect = questions[0].correct === e.target.textContent;
@@ -45,7 +51,7 @@ class QuizApp extends Component {
     const currentStep = step - 1;
     const tries = answersFromUser[currentStep].tries;
 
-    if (isCorrect && e.target.nodeName === 'LI') {
+    if (isCorrect && e.target.nodeName === 'LI' && this.state.timeleft) {
       e.target.parentNode.style.pointerEvents = 'none';
 
       e.target.classList.add('right');
@@ -104,8 +110,10 @@ class QuizApp extends Component {
   }
 
   nextStep() {
-    document.querySelector('.correct-modal').classList.remove('modal-enter');
-    document.querySelector('.bonus').classList.remove('show');
+    if(this.state.timeleft){
+      document.querySelector('.correct-modal').classList.remove('modal-enter');
+      document.querySelector('.bonus').classList.remove('show');
+    }
     const { questions, userAnswers, step, score } = this.state;
     const restOfQuestions = questions.slice(1);
     const currentStep = step - 1;
@@ -128,9 +136,9 @@ class QuizApp extends Component {
   }
 
   render() {
-    const { step, questions, userAnswers, maxQuestions, score } = this.state;
+    const { step, questions, userAnswers, maxQuestions, score, timeleft } = this.state;
 
-    if (step >= maxQuestions + 1) {
+    if (step >= maxQuestions + 1 || !timeleft) {
       return (
         <Results
           score={score}
@@ -145,6 +153,7 @@ class QuizApp extends Component {
         totalQuestions={maxQuestions}
         score={score}
         handleAnswerClick={this.handleAnswerClick}
+        noTimeLeft={this.noTimeLeft}
       />
     );
   }
