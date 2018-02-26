@@ -1,6 +1,6 @@
 import React from "react";
 import "./NotFound.css";
-import Vader from "../images/vader-helmet.png";
+import Vader from "../images/avatars/vader-helmet.png";
 import { Label } from "react-bootstrap"; 
 
 
