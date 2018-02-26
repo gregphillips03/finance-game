@@ -13,7 +13,7 @@ const Quiz = ({ step, questions, totalQuestions, score, handleAnswerClick, noTim
           <div className="description">of <span>{totalQuestions}</span></div>
         </div>
         <div className="clock-timer">
-          <CountdownClock size={200} onComplete={noTimeLeft} seconds={15} />
+          <CountdownClock size={200} onComplete={noTimeLeft} seconds={30} />
         </div>
         <div className="score-container">
           <h2>Score</h2>

@@ -85,8 +85,11 @@ class QuizApp extends Component {
           bonus.textContent = '+1';
         }
 
-        document.querySelector('.correct-modal').classList.add('modal-enter');
-        document.querySelector('.bonus').classList.add('show');
+        if(this.state.timeleft){
+          document.querySelector('.correct-modal').classList.add('modal-enter');
+          document.querySelector('.bonus').classList.add('show'); 
+        }
+
 
       }, 500);
 
