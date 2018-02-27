@@ -7,7 +7,7 @@ import { questions } from '../data/quiz-data';
 
 class QuizApp extends Component {
   constructor(props) {
-    super();
+    super(props);
 
     this.state = {
       questions:  [],
@@ -16,6 +16,7 @@ class QuizApp extends Component {
       step: 1,
       score: 0,
       timeleft: true,
+      isPaused: false, 
     };
 
     this.handleAnswerClick = this.handleAnswerClick.bind(this);
@@ -61,7 +62,8 @@ class QuizApp extends Component {
       };
 
       this.setState({
-        userAnswers: answersFromUser
+        userAnswers: answersFromUser,
+        isPaused: true,
       });
 
       setTimeout(() => {
@@ -130,7 +132,8 @@ class QuizApp extends Component {
         if (tries === 3) return score + 2;
         return score + 1;
       })(),
-      questions: restOfQuestions
+      questions: restOfQuestions, 
+      isPaused: false,
     });
   }
 
@@ -139,7 +142,7 @@ class QuizApp extends Component {
   }
 
   render() {
-    const { step, questions, userAnswers, maxQuestions, score, timeleft } = this.state;
+    const { step, questions, userAnswers, maxQuestions, score, timeleft, isPaused } = this.state;
 
     if (step >= maxQuestions + 1 || !timeleft) {
       return (
@@ -157,6 +160,7 @@ class QuizApp extends Component {
         score={score}
         handleAnswerClick={this.handleAnswerClick}
         noTimeLeft={this.noTimeLeft}
+        isPaused={isPaused}
       />
     );
   }
