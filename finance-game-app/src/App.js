@@ -29,7 +29,7 @@ handleLogout = event => {
   this.props.history.push("/logout");
   localStorage.removeItem('currentUserEmail'); 
   localStorage.removeItem('currentUserFaction');
-  localStorage.removeItem('currentGameState'); 
+  sessionStorage.removeItem('currentGameState'); 
 }
 
 async componentDidMount() {

@@ -4,7 +4,7 @@ import tally from '../helpers/tally';
 import { Button, ButtonToolbar, Label } from 'react-bootstrap'; 
 import getSuccessImage from '../helpers/getSuccessImage';
 
-const Results = ({ userAnswers, score, restartQuiz, backToGamePanel }) => {
+const Results = ({ userAnswers, score, restartQuiz }) => {
 
   const triesTotal = tally(userAnswers);
   const oneTries = triesTotal[1] && <div><strong>{triesTotal[1]}</strong> on the <Label bsStyle="success">first</Label> try.</div>;

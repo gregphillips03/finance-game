@@ -11,7 +11,7 @@ import VaderMA from "../images/vader-mad.png";
 import VaderPI from "../images/vader-pissed.png"; 
 
 const getSuccessImage = n => {
-	var faction = sessionStorage.getItem("currentUserFaction"); 
+	var faction = localStorage.getItem("currentUserFaction"); 
 	var img;
 	if(faction==='Empire'){
 		if(n > 89){
