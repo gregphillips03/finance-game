@@ -30,7 +30,7 @@ handleLogout = event => {
   localStorage.removeItem('currentUserEmail'); 
   localStorage.removeItem('currentUserFaction');
   localStorage.removeItem('emailfromcognito'); 
-  sessionStorage.removeItem('currentGameState'); 
+  sessionStorage.clear();  
 }
 
 async componentDidMount() {
