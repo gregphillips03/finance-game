@@ -23,7 +23,7 @@ handleClick(target){
           <h1>Lightning Round</h1>
           <p>The Lightning Rounds <Label bsStyle="success">present</Label> the user with questions
           they must answer during a set period of time.</p>
-          <p>Rewards are more <Label bsStyle="success">valuable</Label> the better the user responds to them.</p>
+          <p>Rewards are more <Label bsStyle="success">valuable</Label> the better the user responds to the questions.</p>
        </div>
 
        <div className="row">
