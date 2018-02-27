@@ -9,6 +9,14 @@ export async function authUser() {
   }
 
   await getUserToken(currentUser);
+  currentUser.getUserAttributes(function(err, result){
+    if(err){
+      alert(err);
+      return;
+    }else{
+      localStorage.setItem('emailfromcognito', result[2].getValue()); 
+      }
+    })
 
   return true;
 }
