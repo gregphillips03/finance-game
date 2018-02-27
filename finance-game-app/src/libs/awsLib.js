@@ -9,16 +9,23 @@ export async function authUser() {
   }
 
   await getUserToken(currentUser);
-  currentUser.getUserAttributes(function(err, result){
-    if(err){
-      alert(err);
-      return;
-    }else{
-      localStorage.setItem('emailfromcognito', result[2].getValue()); 
-      }
-    })
-
   return true;
+}
+
+export async function getCognitoEmail(){
+  const currentUser = getCurrentUser(); 
+  if(currentUser === null){
+    return false; 
+  }
+  await currentUser.getUserAttributes(function(err, result){
+    if(err){
+      alert(err); 
+      return
+    } else {
+      localStorage.setItem('emailfromcognito', result[2].getValue()); 
+      return result[2].getValue(); 
+    }
+  })
 }
 
 function getUserToken(currentUser) {

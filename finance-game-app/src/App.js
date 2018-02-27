@@ -29,6 +29,7 @@ handleLogout = event => {
   this.props.history.push("/logout");
   localStorage.removeItem('currentUserEmail'); 
   localStorage.removeItem('currentUserFaction');
+  localStorage.removeItem('emailfromcognito'); 
   sessionStorage.removeItem('currentGameState'); 
 }
 
