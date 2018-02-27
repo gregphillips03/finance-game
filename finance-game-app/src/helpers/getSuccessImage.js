@@ -16,11 +16,11 @@ const getSuccessImage = n => {
 	if(faction==='Empire'){
 		if(n > 89){
 			img = VaderVH; 
-		} else if (n > 79){
-			img = VaderHA; 
 		} else if (n > 69){
+			img = VaderHA; 
+		} else if (n > 59){
 			img = VaderNH; 
-		} else if (n > 49){
+		} else if (n > 39){
 			img = VaderMA; 
 		} else {
 			img = VaderPI; 
