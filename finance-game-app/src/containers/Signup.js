@@ -146,7 +146,7 @@ handleConfirmationSubmit = async event => {
     );
 
     this.props.userHasAuthenticated(true, this.state.email);
-    sessionStorage.setItem('currentUserEmail', this.state.email); 
+    localStorage.setItem('currentUserEmail', this.state.email); 
     this.props.history.push("/dashboard");
   } catch (e) {
     alert("Error in handleConfirmationSubmit");
