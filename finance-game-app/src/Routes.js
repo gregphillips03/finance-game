@@ -26,7 +26,7 @@ export default ({ childProps }) =>
     <AuthenticatedRoute path="/dashboard" exact component={Dashboard} props={childProps} />
     <AuthenticatedRoute path="/leaderboard" exact component={Leaderboard} props={childProps} />
     <AuthenticatedRoute path="/game" exact component={Game} props={childProps} />
-    <AuthenticatedRoute path="/logout" exact component={Goodbye} props={childProps} />
+    <UnauthenticatedRoute path="/logout" exact component={Goodbye} props={childProps} />
     <AuthenticatedRoute path="/faction" exact component={Faction} props={childProps} />
     <AuthenticatedRoute path="/game/arena" exact component={Arena} props={childProps} />
     <AuthenticatedRoute path="/game/lightning" exact component={LightningRound} props={childProps} />

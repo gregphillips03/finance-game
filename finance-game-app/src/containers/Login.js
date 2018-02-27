@@ -41,7 +41,7 @@ handleSubmit = async event => {
   try {
     await this.login(this.state.email, this.state.password);
     this.props.userHasAuthenticated(true, this.state.email);
-    sessionStorage.setItem('currentUserEmail', this.state.email); 
+    localStorage.setItem('currentUserEmail', this.state.email); 
     this.props.history.push("/faction");
   } catch (e) {
     alert("We've detected a disturbance in the force. Your authentication credentials are invalid.");

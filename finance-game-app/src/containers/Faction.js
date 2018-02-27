@@ -18,7 +18,7 @@ export default class Faction extends Component {
   }
 
 handleClick(faction){
-  sessionStorage.setItem('currentUserFaction', faction); 
+  localStorage.setItem('currentUserFaction', faction); 
   this.props.history.push("/dashboard");  
 }
 

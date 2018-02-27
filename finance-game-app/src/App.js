@@ -27,15 +27,15 @@ handleLogout = event => {
   signOutUser();
   this.userHasAuthenticated(false);
   this.props.history.push("/logout");
-  sessionStorage.removeItem('currentUserEmail'); 
-  sessionStorage.removeItem('currentUserFaction');
-  sessionStorage.removeItem('currentGameState'); 
+  localStorage.removeItem('currentUserEmail'); 
+  localStorage.removeItem('currentUserFaction');
+  localStorage.removeItem('currentGameState'); 
 }
 
 async componentDidMount() {
   try {
     if (await authUser()) {
-      this.userHasAuthenticated(true, sessionStorage.getItem('currentUserEmail'));
+      this.userHasAuthenticated(true, localStorage.getItem('currentUserEmail'));
     }
   }
   catch(e) {
@@ -85,7 +85,7 @@ render() {
                   <Navbar.Text>
                     Logged in as: <b>{this.state.userEmail + " "}  
                     <Badge>
-                      {sessionStorage.getItem('currentUserFaction')}
+                      {localStorage.getItem('currentUserFaction')}
                     </Badge></b>
                   </Navbar.Text>, 
                   <Navbar.Text>
