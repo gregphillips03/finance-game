@@ -11,3 +11,15 @@
 .Arena .lander p {
   color: #999;
 }
+
+.Arena .GameArea {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: white;
+  color: white;
+  font-family: 'Press Start 2P', sans-serif;
+  font-size: 22px;
+}
