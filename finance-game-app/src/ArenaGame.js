@@ -45,9 +45,7 @@ const setIsRunning = setProp('isRunning')
 const setIsPlayerTurn = setProp('isPlayerTurn')
 const setPlayerHp = setProp2('playerStats')('hp')
 const setEnemyHp =  setProp2('enemyStats')('hp')
-const resetState = () => ({...initialState})
-
-
+//const resetState = () => ({...initialState})
 
 //////// Game component
 

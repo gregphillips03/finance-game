@@ -46,11 +46,11 @@ export default class MenuSelect extends React.Component {
     
     let inc = true
         
-    if (e.keyCode == '40') {      
+    if (e.keyCode === '40') {      
       inc = true
-    } else if (e.keyCode == '38') {      
+    } else if (e.keyCode === '38') {      
       inc = false
-    } else if ( (e.keyCode == '13') || (e.keyCode == '32') ) {
+    } else if ( (e.keyCode === '13') || (e.keyCode === '32') ) {
       if (this.props.onChoice) { 
         this.props.onChoice(this.state.selected)
       }
@@ -62,7 +62,7 @@ export default class MenuSelect extends React.Component {
     this.setState(state => {
       let selected = inc ?
           (state.selected + 1) % this.props.items.length :
-          (state.selected == 0 ?
+          (state.selected === 0 ?
             (this.props.items.length - 1) : ((state.selected - 1) % this.props.items.length) )
 
       let handTop =  this.itemRefs[selected].offsetTop
@@ -91,7 +91,7 @@ export default class MenuSelect extends React.Component {
         {
           this.props.active ?
           <div className="menu_hand" style={{ top: this.state.handTop, left: this.state.handLeft }}>
-            <img src="http://res.cloudinary.com/forte-3d/image/upload/v1512749704/hand_gkm8wr.png"/>
+            <img src="http://res.cloudinary.com/forte-3d/image/upload/v1512749704/hand_gkm8wr.png" alt='sega hand'/>
           </div>  : null
         }
         </MenuContainer>        
