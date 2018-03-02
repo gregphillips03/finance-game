@@ -141,8 +141,7 @@ export default class Game extends React.Component {
                 <span style={{flex: 2, textAlign: 'right'}}> {stats.hp}/{stats.maxHp} HP </span>
               </div>
             }
-            >
-            
+            >            
           </MenuSelect>          
         </div>
       </div>
