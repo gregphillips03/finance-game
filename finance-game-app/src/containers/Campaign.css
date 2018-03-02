@@ -43,21 +43,3 @@
         width: 100%;
     }
 }
-
-.card-planet img {
-	display: block;
-	margin-right: auto; 
-	margin-left: auto; 
-	height: 200px; 
-	width: 200px;
-}
-
-.card-planet {
-	box-shadow: 4px 8px 16px 4px rgba(0,0,0,0.2); 
-	transition: 0.5s;
-	padding: 5px 5px 5px 5px;
-}
-
-.card-planet:hover{
-	box-shadow: var(--shadow-background-on-hover);	
-}

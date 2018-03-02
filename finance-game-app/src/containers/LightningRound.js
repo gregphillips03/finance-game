@@ -14,7 +14,7 @@ export default class LightningRound extends Component {
   }
 
 handleClick(target){
-  this.props.history.push("/game/" + target);  
+  this.props.history.push("/game/" + sessionStorage.getItem('world') + "/" + target);  
 }
   render() {
     return (

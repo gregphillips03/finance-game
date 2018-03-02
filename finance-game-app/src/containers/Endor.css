@@ -1,0 +1,117 @@
+.Endor .lander {
+  padding: 10px 0;
+  text-align: center;
+}
+
+.Endor .lander h1 {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+}
+
+.Endor .lander p {
+  color: #999;
+}
+
+/* Create four equal columns that float next to each other */
+.column {
+    float: left;
+    width: 25%;
+    padding: 10px;
+    text-align: center; 
+}
+
+.column h2 {
+	font-family: "Open Sans", sans-serif;
+	font-weight: 600;
+}
+
+.column p {
+	color: #999;
+	font-weight: 600;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive layout - makes the four columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+    .column {
+        width: 100%;
+    }
+}
+
+.card-arena img {
+  display: block;
+  margin-right: auto; 
+  margin-left: auto; 
+  height: 200px; 
+  width: 200px;
+}
+
+.card-arena {
+  box-shadow: 4px 8px 16px 4px rgba(0,0,0,0.2); 
+  transition: 0.5s;
+  padding: 5px 5px 5px 5px;
+}
+
+.card-arena:hover{
+  box-shadow: var(--shadow-background-on-hover);  
+}
+
+.card-timer img {
+  display: block;
+  margin-right: auto; 
+  margin-left: auto; 
+  height: 200px; 
+  width: 200px;
+}
+
+.card-timer {
+  box-shadow: 4px 8px 16px 4px rgba(0,0,0,0.2); 
+  transition: 0.5s;
+  padding: 5px 5px 5px 5px;
+}
+
+.card-timer:hover{
+  box-shadow: var(--shadow-background-on-hover);    
+}
+
+.card-campaign img {
+  display: block;
+  margin-right: auto; 
+  margin-left: auto; 
+  height: 200px; 
+  width: 200px;
+}
+
+.card-campaign {
+  box-shadow: 4px 8px 16px 4px rgba(0,0,0,0.2); 
+  transition: 0.5s;
+  padding: 5px 5px 5px 5px;
+}
+
+.card-campaign:hover{
+  box-shadow: var(--shadow-background-on-hover);    
+}
+
+.card-crafting img {
+  display: block;
+  margin-right: auto; 
+  margin-left: auto; 
+  height: 200px; 
+  width: 200px;
+}
+
+.card-crafting {
+  box-shadow: 4px 8px 16px 4px rgba(0,0,0,0.2); 
+  transition: 0.5s;
+  padding: 5px 5px 5px 5px;
+}
+
+.card-crafting:hover{
+  box-shadow: var(--shadow-background-on-hover);    
+}
