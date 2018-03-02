@@ -35,13 +35,12 @@ export default ({ childProps }) =>
     <AuthenticatedRoute path="/game/endor/lightning" exact component={LightningRound} props={childProps} />
     <AuthenticatedRoute path="/game/endor/lightning/go" exact component={LightningContainer} props={childProps} />
     <AuthenticatedRoute path="/game/endor/campaign" exact component={Campaign} props={childProps} />
-    <AuthenticatedRoute path="/game/endor/crafting" exact component={Crafting} props={childProps}/>
     <AuthenticatedRoute path="/game/voss" exact component={Voss} props={childProps} />
     <AuthenticatedRoute path="/game/voss/arena" exact component={Arena} props={childProps} />
     <AuthenticatedRoute path="/game/voss/lightning" exact component={LightningRound} props={childProps} />
     <AuthenticatedRoute path="/game/voss/lightning/go" exact component={LightningContainer} props={childProps} />
     <AuthenticatedRoute path="/game/voss/campaign" exact component={Campaign} props={childProps} />
-    <AuthenticatedRoute path="/game/voss/crafting" exact component={Crafting} props={childProps}/>
+    <AuthenticatedRoute path="/dashboard/crafting" exact component={Crafting} props={childProps}/>
     { /* Finally, catch all unmatched routes */ }
     <Route component={NotFound} />
   </Switch>;
