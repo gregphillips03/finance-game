@@ -16,8 +16,6 @@ const setProp2 = name1 => name2 => value => obj => ({
     [name2]: value
   }
 })   
-
-
 //////// State and state functions
 
 const initialState = () => ({
