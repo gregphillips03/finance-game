@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./Leaderboard.css";
 import { Label } from "react-bootstrap"; 
-import BoardSwitch from "../components/BoardSwitch"; 
+import LeaderBoard from "../components/LeaderBoard"; 
 
 export default class Leaderboard extends Component {
   render() {
@@ -14,7 +14,6 @@ export default class Leaderboard extends Component {
           <p>It will show a ordered list of avatars which <Label bsStyle="success">rank each game player</Label> and show how each faction is performing.</p>
           <p>The switch board below will allow the user to toggle between views.</p>        
         </div>
-        <BoardSwitch />
       </div>
     );
   }
