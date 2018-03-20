@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./Dashboard.css";
 import { Label } from "react-bootstrap"; 
 import Gears from "../images/gears.png";
+import Play from "../images/play.png";
 
 export default class Dashboard extends Component {
     constructor(props) {
@@ -15,6 +16,11 @@ export default class Dashboard extends Component {
 handleClick(mode){
   sessionStorage.setItem('mode', mode); 
   this.props.history.push("/dashboard/" + sessionStorage.getItem('mode'));  
+}
+
+handleClickExternal(mode){
+  sessionStorage.setItem('mode', mode); 
+  this.props.history.push(sessionStorage.getItem('mode')); 
 }
   render() {
     return (
@@ -33,6 +39,14 @@ handleClick(mode){
             <img src={Gears} alt="crafting-logo"/>
             <h2>Crafting</h2>
             <p>Create Items for In Game Use</p>
+          </div>
+          </div>
+
+          <div className="column" id="column-click" onClick={()=>this.handleClickExternal('game')}>
+          <div className="card-game">
+            <img src={Play} alt="play-logo"/>
+            <h2>Play Game</h2>
+            <p>Go To The Game Panel</p>
           </div>
           </div>
 
