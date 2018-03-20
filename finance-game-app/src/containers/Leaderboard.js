@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./Leaderboard.css";
 import { Label } from "react-bootstrap"; 
+//import Board from "../components/Board"; 
 
 export default class Leaderboard extends Component {
   render() {
