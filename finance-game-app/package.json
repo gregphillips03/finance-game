@@ -11,6 +11,7 @@
     "react-bootstrap-alert": "^1.0.7",
     "react-bootstrap-table": "^4.3.1",
     "react-bootstrap-table-next": "^0.1.5",
+    "react-circular-progressbar": "^0.8.0",
     "react-countdown-clock": "^2.1.0",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.7",
