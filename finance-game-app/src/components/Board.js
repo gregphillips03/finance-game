@@ -41,6 +41,18 @@ function userNameFormatter(cell, row){
 	return(<Label bsStyle="info">{cell}</Label>)
 }
 
+class ActionFormatter extends React.Component {
+  render() {
+    return (
+      <button className='btn btn-info'>Action</button>
+    );
+  }
+}
+
+function actionFormatter(cell, row) {
+  return <ActionFormatter />;
+}
+
 export default class Board extends Component {
   constructor(props) {
     super(props);
@@ -51,23 +63,42 @@ export default class Board extends Component {
       prePage: <i className='glyphicon glyphicon-chevron-left' />,
       nextPage: <i className='glyphicon glyphicon-chevron-right' />,
       firstPage: <i className='glyphicon glyphicon-step-backward' />,
-      lastPage: <i className='glyphicon glyphicon-step-forward' />
+      lastPage: <i className='glyphicon glyphicon-step-forward' />, 
+      printToolBar: true,
+      clearSearch: false,
+      defaultSortName: 'level',
+      defaultSortOrder: 'desc',
+      noDataText: "Your Search Parameters are weak...",
     };
+
     return (
       <BootstrapTable data={ userdata } 
       				  bordered={ false } 
       				  hover={ true }
       				  options={ tableOptions}
+      				  search={ true }
+      				  searchPlaceholder="Search User Name or Level.."
+      				  exportCSV={ true }
       				  pagination>
-      	  <TableHeaderColumn dataField='img' width='15%' dataFormat={makeDefaultImage}>Avatar</TableHeaderColumn>
+      	  <TableHeaderColumn dataField='img' width='15%' 
+      	  					 searchable={ false }
+      	  					 export={ false }
+      	  					 dataFormat={makeDefaultImage}>Avatar</TableHeaderColumn>
       	  <TableHeaderColumn dataField='level' width='10%' 
       	  					 dataFormat={integerFormatter}
       	  					 dataSort={true}>Level</TableHeaderColumn>
-          <TableHeaderColumn dataField='username' width='30%' isKey={ true } dataFormat={userNameFormatter}>Username</TableHeaderColumn>
+          <TableHeaderColumn dataField='username' 
+          					 width='30%' 
+          					 isKey={ true } 
+          					 searchable={ true }
+          					 dataFormat={userNameFormatter}>Username</TableHeaderColumn>
           <TableHeaderColumn dataField='alltime'
+          					 searchable={ false }
           					 dataSort={true}>All Time XP</TableHeaderColumn>
           <TableHeaderColumn dataField='recent'
+          					 searchable={ false }
           					 dataSort={true}>Recent XP</TableHeaderColumn>
+          <TableHeaderColumn dataField='action' dataFormat={ actionFormatter } export={ false }>Action</TableHeaderColumn>
       </BootstrapTable>
     );
   }
