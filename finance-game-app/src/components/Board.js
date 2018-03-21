@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
 import { userdata } from '../data/user-data';
 import { Label } from "react-bootstrap";
+import getLevelImage from '../helpers/getLevelImage';
 import MaleFace1 from "../images/faces-male/A01.png"; 
 import MaleFace2 from "../images/faces-male/A02.png"; 
 import FemFace1 from "../images/faces-female/FA01.png";
@@ -33,8 +34,8 @@ function makeDefaultImage(cell, row){
 	}
 }
 
-function integerFormatter(cell, row){
-	return(<b> {cell} </b>)
+function levelToImage(cell, row){
+	return(<img src={getLevelImage(cell)} height="50" width="50" />)
 }
 
 function userNameFormatter(cell, row){
@@ -91,8 +92,8 @@ export default class Board extends Component {
       	  					 searchable={ false }
       	  					 export={ false }
       	  					 dataFormat={makeDefaultImage}>Avatar</TableHeaderColumn>
-      	  <TableHeaderColumn dataField='level' width='10%' 
-      	  					 dataFormat={integerFormatter}
+      	  <TableHeaderColumn dataField='level' width='15%' 
+      	  					 dataFormat={levelToImage}
       	  					 headerAlign='center'
       	  					 dataAlign='center'
       	  					 dataSort={true}>Level</TableHeaderColumn>
