@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
 import { userdata } from '../data/user-data';
-import { Label } from "react-bootstrap";
+import { factiondata } from '../data/faction-data';
+import { Label, Badge } from "react-bootstrap";
 import getLevelImage from '../helpers/getLevelImage';
+import getFactionImage from '../helpers/getFactionImage';
 import MaleFace1 from "../images/faces-male/A01.png"; 
 import MaleFace2 from "../images/faces-male/A02.png"; 
 import FemFace1 from "../images/faces-female/FA01.png";
@@ -38,8 +40,16 @@ function levelToImage(cell, row){
 	return(<img src={getLevelImage(cell)} height="50" width="50" />)
 }
 
+function factionToImage(cell, row){
+  return(<img src={getFactionImage(cell)} height="80" width="80" />)
+}
+
 function userNameFormatter(cell, row){
 	return(<Label bsStyle="info">{cell}</Label>)
+}
+
+function factionNameFormatter(cell, row){
+  return(<Label bsStyle="info">{cell}</Label>)
 }
 
 class ActionFormatter extends React.Component {
@@ -132,25 +142,25 @@ export default class Board extends Component {
       defaultSortOrder: 'desc',
       };
     return(
-        <BootstrapTable data={ userdata } 
+        <BootstrapTable data={ factiondata } 
                 bordered={ false } 
                 hover={ true }
                 options={ tableOptions}
                 search={ false }
                 exportCSV={ false }
-                csvFileName='LeaderBoard'
+                csvFileName='LeaderBoard-Faction'
                 ignoreSinglePage={ true }>
-          <TableHeaderColumn dataField='img' width='15%' 
+          <TableHeaderColumn dataField='factionname' width='15%' 
                      searchable={ false }
                      export={ false }
-                     dataFormat={makeDefaultImage}>Avatar</TableHeaderColumn>
-          <TableHeaderColumn dataField='username' 
+                     dataFormat={factionToImage}>Avatar</TableHeaderColumn>
+          <TableHeaderColumn dataField='factionname' 
                      width='30%' 
                      headerAlign='center'
                      dataAlign='center'
                      isKey={ true } 
                      searchable={ true }
-                     dataFormat={userNameFormatter}>Faction</TableHeaderColumn>
+                     dataFormat={factionNameFormatter}>Faction</TableHeaderColumn>
           <TableHeaderColumn dataField='alltime'
                      searchable={ false }
                      headerAlign='center'
