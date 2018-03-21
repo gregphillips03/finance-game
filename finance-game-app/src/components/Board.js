@@ -57,9 +57,12 @@ function actionFormatter(cell, row) {
 export default class Board extends Component {
   constructor(props) {
     super(props);
+      this.state = {
+        toggle: false,
+      };
   }
 
-  render() {
+  renderByPlayerLeaderBoard(){
     const tableOptions = {
       prePage: <i className='glyphicon glyphicon-chevron-left' />,
       nextPage: <i className='glyphicon glyphicon-chevron-right' />,
@@ -70,56 +73,103 @@ export default class Board extends Component {
       defaultSortName: 'level',
       defaultSortOrder: 'desc',
       noDataText: "Your Search Parameters are weak...\n Use the Force!",
-	  sizePerPageList: [ 10, 20, 30 ],
-	  sizePerPage: 10,
-	  hideSizePerPage: true, 
-	  paginationShowsTotal: true, 
-    };
-
-    return (
-      <BootstrapTable data={ userdata } 
-      				  bordered={ false } 
-      				  hover={ true }
-      				  options={ tableOptions}
-      				  search={ true }
-      				  searchPlaceholder="Search User Name or Level.."
-      				  exportCSV={ true }
-      				  csvFileName='LeaderBoard'
-      				  ignoreSinglePage={ true }
-      				  condensed
-      				  pagination>
-      	  <TableHeaderColumn dataField='img' width='15%' 
-      	  					 searchable={ false }
-      	  					 export={ false }
-      	  					 dataFormat={makeDefaultImage}>Avatar</TableHeaderColumn>
-      	  <TableHeaderColumn dataField='level' width='15%' 
-      	  					 dataFormat={levelToImage}
-      	  					 headerAlign='center'
-      	  					 dataAlign='center'
-      	  					 dataSort={true}>Level</TableHeaderColumn>
+      sizePerPageList: [ 10, 20, 30 ],
+      sizePerPage: 10,
+      hideSizePerPage: true, 
+      paginationShowsTotal: true, 
+      };
+    return(
+        <BootstrapTable data={ userdata } 
+                bordered={ false } 
+                hover={ true }
+                options={ tableOptions}
+                search={ true }
+                searchPlaceholder="Search User Name or Level.."
+                exportCSV={ true }
+                csvFileName='LeaderBoard'
+                ignoreSinglePage={ true }
+                condensed
+                pagination>
+          <TableHeaderColumn dataField='img' width='15%' 
+                     searchable={ false }
+                     export={ false }
+                     dataFormat={makeDefaultImage}>Avatar</TableHeaderColumn>
+          <TableHeaderColumn dataField='level' width='15%' 
+                     dataFormat={levelToImage}
+                     headerAlign='center'
+                     dataAlign='center'
+                     dataSort={true}>Level</TableHeaderColumn>
           <TableHeaderColumn dataField='username' 
-          					 width='30%' 
-      	  					 headerAlign='center'
-      	  					 dataAlign='center'
-          					 isKey={ true } 
-          					 searchable={ true }
-          					 dataFormat={userNameFormatter}>Username</TableHeaderColumn>
+                     width='30%' 
+                     headerAlign='center'
+                     dataAlign='center'
+                     isKey={ true } 
+                     searchable={ true }
+                     dataFormat={userNameFormatter}>Username</TableHeaderColumn>
           <TableHeaderColumn dataField='alltime'
-          					 searchable={ false }
-      	  					 headerAlign='center'
-      	  					 dataAlign='center'
-          					 dataSort={true}>All Time XP</TableHeaderColumn>
+                     searchable={ false }
+                     headerAlign='center'
+                     dataAlign='center'
+                     dataSort={true}>All Time XP</TableHeaderColumn>
           <TableHeaderColumn dataField='recent'
-          					 searchable={ false }
-      	  					 headerAlign='center'
-      	  					 dataAlign='center'
-          					 dataSort={true}>Recent XP</TableHeaderColumn>
+                     searchable={ false }
+                     headerAlign='center'
+                     dataAlign='center'
+                     dataSort={true}>Recent XP</TableHeaderColumn>
           <TableHeaderColumn dataField='action' 
-          					 dataFormat={ actionFormatter } 
-      	  					 headerAlign='center'
-      	  					 dataAlign='center'
-          					 export={ false }>Action</TableHeaderColumn>
+                     dataFormat={ actionFormatter } 
+                     headerAlign='center'
+                     dataAlign='center'
+                     export={ false }>Action</TableHeaderColumn>
       </BootstrapTable>
+      );
+  }
+
+  renderByFactionLeaderBoard(){
+    const tableOptions = {
+      printToolBar: false,
+      defaultSortName: 'alltime',
+      defaultSortOrder: 'desc',
+      };
+    return(
+        <BootstrapTable data={ userdata } 
+                bordered={ false } 
+                hover={ true }
+                options={ tableOptions}
+                search={ false }
+                exportCSV={ false }
+                csvFileName='LeaderBoard'
+                ignoreSinglePage={ true }>
+          <TableHeaderColumn dataField='img' width='15%' 
+                     searchable={ false }
+                     export={ false }
+                     dataFormat={makeDefaultImage}>Avatar</TableHeaderColumn>
+          <TableHeaderColumn dataField='username' 
+                     width='30%' 
+                     headerAlign='center'
+                     dataAlign='center'
+                     isKey={ true } 
+                     searchable={ true }
+                     dataFormat={userNameFormatter}>Faction</TableHeaderColumn>
+          <TableHeaderColumn dataField='alltime'
+                     searchable={ false }
+                     headerAlign='center'
+                     dataAlign='center'
+                     dataSort={true}>All Time XP</TableHeaderColumn>
+          <TableHeaderColumn dataField='recent'
+                     searchable={ false }
+                     headerAlign='center'
+                     dataAlign='center'
+                     dataSort={true}>Recent XP</TableHeaderColumn>
+      </BootstrapTable>
+      );
+  }
+
+  render() {
+    return (
+      this.state.toggle === false
+      ? this.renderByPlayerLeaderBoard()
+      : this.renderByFactionLeaderBoard()
     );
   }
 }
