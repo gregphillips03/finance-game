@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
 import { userdata } from '../data/user-data';
-import { Label } from "react-bootstrap"; 
+import { Label } from "react-bootstrap";
 import '../../node_modules/react-bootstrap-table/dist/react-bootstrap-table-all.min.css';
 
 function imageFormatter(cell, row){
-  return (<img style={{width:80}} src={cell}/>)
+  return (<img style={{width:80}} src={cell} className="leaderAvatar" alt="Avatar"/>)
 }
 
 function integerFormatter(cell, row){

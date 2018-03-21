@@ -11,7 +11,7 @@ export const userdata = [
   },
   {
     "username": "Spider Man",
-    "img": "/images/faces-male/A01.png",
+    "img": "../src/images/faces-male/A01.png",
     "alltime": 421, 
     "recent": 389, 
     "lastUpdate": "2016-03-05T16:15:36.014Z", 
