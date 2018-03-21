@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import "./Dashboard.css";
 import { Label } from "react-bootstrap"; 
+import CircularProgressbar from 'react-circular-progressbar'; 
 import Gears from "../images/gears.png";
 import Play from "../images/play.png";
 import Leader from "../images/leaderboard-logo.png";
+import 'react-circular-progressbar/dist/styles.css'; 
 
 export default class Dashboard extends Component {
     constructor(props) {
@@ -56,6 +58,17 @@ handleClickExternal(mode){
             <img src={Leader} alt="leaderboard-logo"/>
             <h2>Leaderboard</h2>
             <p>Go To The Leaderboard</p>
+          </div>
+          </div>
+
+          <div className="column" id="column-click">
+          <div className="card-progressbar">
+            <CircularProgressbar percentage={90} 
+                                 initialAnimation={ true }
+                                 styles={{ path: { stroke: 'rgba(190, 190, 255, ${90/100})'}}}
+                                 className="progbarcomponent" />
+            <h2>Total Progress</h2>
+            <p>My Total Progress</p>
           </div>
           </div>
 
