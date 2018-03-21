@@ -5,6 +5,7 @@ import CircularProgressbar from 'react-circular-progressbar';
 import Gears from "../images/gears.png";
 import Play from "../images/play.png";
 import Leader from "../images/leaderboard-logo.png";
+import Rucksack from "../images/rucksack-logo.png"
 import 'react-circular-progressbar/dist/styles.css'; 
 
 export default class Dashboard extends Component {
@@ -85,14 +86,6 @@ handleClickExternal(mode){
 
         <div className="row">
 
-          <div className="column" id="column-click" onClick={()=>this.handleClick('crafting')}>
-          <div className="card-crafting">
-            <img src={Gears} alt="crafting-logo"/>
-            <h2>Crafting</h2>
-            <p>Create Items for In Game Use</p>
-          </div>
-          </div>
-
           <div className="column" id="column-click" onClick={()=>this.handleClickExternal('game')}>
           <div className="card-game">
             <img src={Play} alt="play-logo"/>
@@ -106,6 +99,22 @@ handleClickExternal(mode){
             <img src={Leader} alt="leaderboard-logo"/>
             <h2>Leaderboard</h2>
             <p>Go To The Leaderboard</p>
+          </div>
+          </div>
+
+          <div className="column" id="column-click" onClick={()=>this.handleClick('crafting')}>
+          <div className="card-crafting">
+            <img src={Gears} alt="crafting-logo"/>
+            <h2>Crafting</h2>
+            <p>Create Items for In Game Use</p>
+          </div>
+          </div>
+
+          <div className="column" id="column-click" onClick={()=>this.handleClick('inventory')}>
+          <div className="card-crafting">
+            <img src={Rucksack} alt="inventory-logo"/>
+            <h2>Inventory</h2>
+            <p>Manage Your Inventory</p>
           </div>
           </div>
 
