@@ -48,6 +48,17 @@ handleClickExternal(mode){
           </div>
           </div>
 
+          <div className="column" id="column-click">
+          <div className="card-progressbar">
+            <CircularProgressbar percentage={42} 
+                                 initialAnimation={ true }
+                                 styles={{ path: { stroke: 'rgba(190, 190, 255, ${90/100})'}}}
+                                 className="progbarcomponent" />
+            <h2>More Progress</h2>
+            <p>More of My Progress</p>
+          </div>
+          </div>
+
         </div>
 
         <div className="row">
