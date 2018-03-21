@@ -60,10 +60,14 @@ export default class Board extends Component {
       				  options={ tableOptions}
       				  pagination>
       	  <TableHeaderColumn dataField='img' width='15%' dataFormat={makeDefaultImage}>Avatar</TableHeaderColumn>
-      	  <TableHeaderColumn dataField='level' width='10%' dataFormat={integerFormatter}>Level</TableHeaderColumn>
+      	  <TableHeaderColumn dataField='level' width='10%' 
+      	  					 dataFormat={integerFormatter}
+      	  					 dataSort={true}>Level</TableHeaderColumn>
           <TableHeaderColumn dataField='username' width='30%' isKey={ true } dataFormat={userNameFormatter}>Username</TableHeaderColumn>
-          <TableHeaderColumn dataField='alltime'>All Time XP</TableHeaderColumn>
-          <TableHeaderColumn dataField='recent'>Recent XP</TableHeaderColumn>
+          <TableHeaderColumn dataField='alltime'
+          					 dataSort={true}>All Time XP</TableHeaderColumn>
+          <TableHeaderColumn dataField='recent'
+          					 dataSort={true}>Recent XP</TableHeaderColumn>
       </BootstrapTable>
     );
   }
