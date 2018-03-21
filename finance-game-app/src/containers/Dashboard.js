@@ -2,11 +2,13 @@ import React, { Component } from "react";
 import "./Dashboard.css";
 import { Label } from "react-bootstrap"; 
 import CircularProgressbar from 'react-circular-progressbar'; 
+import { Progress } from 'react-sweet-progress'; 
 import Gears from "../images/gears.png";
 import Play from "../images/play.png";
 import Leader from "../images/leaderboard-logo.png";
 import Rucksack from "../images/rucksack-logo.png"
 import 'react-circular-progressbar/dist/styles.css'; 
+import 'react-sweet-progress/lib/style.css'; 
 
 export default class Dashboard extends Component {
     constructor(props) {
@@ -62,23 +64,25 @@ handleClickExternal(mode){
 
           <div className="column" id="column-click">
           <div className="card-progressbar">
-            <CircularProgressbar percentage={31} 
-                                 initialAnimation={ true }
-                                 styles={{ path: { stroke: 'rgba(190, 190, 255, ${90/100})'}}}
-                                 className="progbarcomponent" />
+            <Progress percent={31}
+                      type="circle"
+                      status="error" 
+                      width={200}
+                      className="progbarcomponent" />
             <h2>More Progress</h2>
-            <p>More of My Progress</p>
+            <p>Bad Progress</p>
           </div>
           </div>
 
           <div className="column" id="column-click">
           <div className="card-progressbar">
-            <CircularProgressbar percentage={69} 
-                                 initialAnimation={ true }
-                                 styles={{ path: { stroke: 'rgba(190, 190, 255, ${90/100})'}}}
-                                 className="progbarcomponent" />
+            <Progress percent={82}
+                      type="circle"
+                      status="success" 
+                      width={200}
+                      className="progbarcomponent" />
             <h2>More Progress</h2>
-            <p>More of My Progress</p>
+            <p>Good Progress</p>
           </div>
           </div>
 
