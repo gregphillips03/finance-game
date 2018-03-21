@@ -3,6 +3,7 @@ import "./Dashboard.css";
 import { Label } from "react-bootstrap"; 
 import Gears from "../images/gears.png";
 import Play from "../images/play.png";
+import Leader from "../images/leaderboard-logo.png";
 
 export default class Dashboard extends Component {
     constructor(props) {
@@ -47,6 +48,14 @@ handleClickExternal(mode){
             <img src={Play} alt="play-logo"/>
             <h2>Play Game</h2>
             <p>Go To The Game Panel</p>
+          </div>
+          </div>
+
+          <div className="column" id="column-click" onClick={()=>this.handleClickExternal('leaderboard')}>
+          <div className="card-leaderboard">
+            <img src={Leader} alt="leaderboard-logo"/>
+            <h2>Leaderboard</h2>
+            <p>Go To The Leaderboard</p>
           </div>
           </div>
 
