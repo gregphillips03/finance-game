@@ -64,11 +64,15 @@ export default class Board extends Component {
       nextPage: <i className='glyphicon glyphicon-chevron-right' />,
       firstPage: <i className='glyphicon glyphicon-step-backward' />,
       lastPage: <i className='glyphicon glyphicon-step-forward' />, 
-      printToolBar: true,
+      printToolBar: false,
       clearSearch: false,
       defaultSortName: 'level',
       defaultSortOrder: 'desc',
-      noDataText: "Your Search Parameters are weak...",
+      noDataText: "Your Search Parameters are weak...\n Use the Force!",
+	  sizePerPageList: [ 10, 20, 30 ],
+	  sizePerPage: 10,
+	  hideSizePerPage: true, 
+	  paginationShowsTotal: true, 
     };
 
     return (
@@ -79,6 +83,9 @@ export default class Board extends Component {
       				  search={ true }
       				  searchPlaceholder="Search User Name or Level.."
       				  exportCSV={ true }
+      				  csvFileName='LeaderBoard'
+      				  ignoreSinglePage={ true }
+      				  condensed
       				  pagination>
       	  <TableHeaderColumn dataField='img' width='15%' 
       	  					 searchable={ false }
@@ -86,19 +93,31 @@ export default class Board extends Component {
       	  					 dataFormat={makeDefaultImage}>Avatar</TableHeaderColumn>
       	  <TableHeaderColumn dataField='level' width='10%' 
       	  					 dataFormat={integerFormatter}
+      	  					 headerAlign='center'
+      	  					 dataAlign='center'
       	  					 dataSort={true}>Level</TableHeaderColumn>
           <TableHeaderColumn dataField='username' 
           					 width='30%' 
+      	  					 headerAlign='center'
+      	  					 dataAlign='center'
           					 isKey={ true } 
           					 searchable={ true }
           					 dataFormat={userNameFormatter}>Username</TableHeaderColumn>
           <TableHeaderColumn dataField='alltime'
           					 searchable={ false }
+      	  					 headerAlign='center'
+      	  					 dataAlign='center'
           					 dataSort={true}>All Time XP</TableHeaderColumn>
           <TableHeaderColumn dataField='recent'
           					 searchable={ false }
+      	  					 headerAlign='center'
+      	  					 dataAlign='center'
           					 dataSort={true}>Recent XP</TableHeaderColumn>
-          <TableHeaderColumn dataField='action' dataFormat={ actionFormatter } export={ false }>Action</TableHeaderColumn>
+          <TableHeaderColumn dataField='action' 
+          					 dataFormat={ actionFormatter } 
+      	  					 headerAlign='center'
+      	  					 dataAlign='center'
+          					 export={ false }>Action</TableHeaderColumn>
       </BootstrapTable>
     );
   }
