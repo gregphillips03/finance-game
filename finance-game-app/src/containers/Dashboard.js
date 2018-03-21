@@ -7,6 +7,8 @@ import Gears from "../images/gears.png";
 import Play from "../images/play.png";
 import Leader from "../images/leaderboard-logo.png";
 import Rucksack from "../images/rucksack-logo.png"
+import Shop from "../images/storefront.png";
+import Trophy from "../images/goals-icon.png"; 
 import 'react-circular-progressbar/dist/styles.css'; 
 import 'react-sweet-progress/lib/style.css'; 
 
@@ -119,6 +121,26 @@ handleClickExternal(mode){
             <img src={Rucksack} alt="inventory-logo"/>
             <h2>Inventory</h2>
             <p>Manage Your Inventory</p>
+          </div>
+          </div>
+
+        </div>
+
+        <div className="row">
+
+          <div className="column" id="column-click" onClick={()=>this.handleClick('shop')}>
+          <div className="card-shop">
+            <img src={Shop} alt="shop-logo"/>
+            <h2>Shop</h2>
+            <p>Purchase Items</p>
+          </div>
+          </div>
+
+          <div className="column" id="column-click" onClick={()=>this.handleClick('achievements')}>
+          <div className="card-achievements">
+            <img src={Trophy} alt="achievements-logo"/>
+            <h2>Achievements</h2>
+            <p>View Your Achievements</p>
           </div>
           </div>
 
