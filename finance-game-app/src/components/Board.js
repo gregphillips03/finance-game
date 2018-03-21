@@ -64,6 +64,8 @@ function actionFormatter(cell, row) {
   return <ActionFormatter />;
 }
 
+
+
 export default class Board extends Component {
   constructor(props) {
     super(props);
@@ -71,6 +73,14 @@ export default class Board extends Component {
         toggle: false,
       };
   }
+
+  toggleSwitch = () => {
+    this.setState(prevState => {
+      return{
+        toggle: !prevState.toggle
+      };
+    });
+  };
 
   renderByPlayerLeaderBoard(){
     const tableOptions = {
