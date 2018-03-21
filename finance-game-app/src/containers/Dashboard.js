@@ -37,6 +37,21 @@ handleClickExternal(mode){
 
         <div className="row">
 
+          <div className="column" id="column-click">
+          <div className="card-progressbar">
+            <CircularProgressbar percentage={90} 
+                                 initialAnimation={ true }
+                                 styles={{ path: { stroke: 'rgba(190, 190, 255, ${90/100})'}}}
+                                 className="progbarcomponent" />
+            <h2>Total Progress</h2>
+            <p>My Total Progress</p>
+          </div>
+          </div>
+
+        </div>
+
+        <div className="row">
+
           <div className="column" id="column-click" onClick={()=>this.handleClick('crafting')}>
           <div className="card-crafting">
             <img src={Gears} alt="crafting-logo"/>
@@ -58,17 +73,6 @@ handleClickExternal(mode){
             <img src={Leader} alt="leaderboard-logo"/>
             <h2>Leaderboard</h2>
             <p>Go To The Leaderboard</p>
-          </div>
-          </div>
-
-          <div className="column" id="column-click">
-          <div className="card-progressbar">
-            <CircularProgressbar percentage={90} 
-                                 initialAnimation={ true }
-                                 styles={{ path: { stroke: 'rgba(190, 190, 255, ${90/100})'}}}
-                                 className="progbarcomponent" />
-            <h2>Total Progress</h2>
-            <p>My Total Progress</p>
           </div>
           </div>
 
