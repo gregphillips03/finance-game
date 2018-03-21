@@ -15,6 +15,7 @@ import LightningRound from "./containers/LightningRound";
 import LightningContainer from "./containers/LightningContainer";
 import Campaign from "./containers/Campaign"; 
 import Crafting from "./containers/Crafting";
+import Inventory from "./containers/Inventory";
 import Endor from "./containers/Endor";
 import Voss from "./containers/Voss"; 
 import AuthenticatedRoute from "./components/AuthenticatedRoute";
@@ -41,6 +42,7 @@ export default ({ childProps }) =>
     <AuthenticatedRoute path="/game/voss/lightning/go" exact component={LightningContainer} props={childProps} />
     <AuthenticatedRoute path="/game/voss/campaign" exact component={Campaign} props={childProps} />
     <AuthenticatedRoute path="/dashboard/crafting" exact component={Crafting} props={childProps}/>
+    <AuthenticatedRoute path="/dashboard/inventory" exact component={Inventory} props={childProps}/>
     { /* Finally, catch all unmatched routes */ }
     <Route component={NotFound} />
   </Switch>;

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "./Arena.css";
 import { Label } from "react-bootstrap";
-import Game from "../ArenaGame";  
 
 export default class Arena extends Component {
   render() {
@@ -12,10 +11,6 @@ export default class Arena extends Component {
           <p>This is the Arena component being rendered to the DOM.</p>
           <p>The Arena will allow users to <Label bsStyle="success">battle</Label> various enemies to <Label bsStyle="success"> 
           gain XP </Label>. This is where the 'grinding' concept will be implemented.</p>
-        </div>
-
-        <div className="GameArea">
-          <Game />
         </div>
 
       </div>
