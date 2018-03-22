@@ -10,7 +10,7 @@ export const userdata = [
   },
   {
     "username": "spider.man@mail.umw.edu",
-    "img": "../src/images/faces-male/A01.png",
+    "img": "/images/faces-female/FA01.png",
     "alltime": 421, 
     "recent": 389, 
     "lastUpdate": "2016-03-05T16:15:36.014Z", 
