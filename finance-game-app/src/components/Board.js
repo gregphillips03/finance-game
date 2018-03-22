@@ -66,14 +66,19 @@ function actionFormatter(cell, row) {
   return <ActionFormatter />;
 }
 
-
-
 export default class Board extends Component {
   constructor(props) {
     super(props);
       this.state = {
         toggle: false,
+        userData: [],
       };
+  }
+
+  componentDidMount(){
+    fetch('/user-data')
+      .then(res => res.json())
+      .then(userData => this.setState({ userData }));
   }
 
   toggleSwitch = () => {
@@ -101,7 +106,7 @@ export default class Board extends Component {
       paginationShowsTotal: true, 
       };
     return(
-        <BootstrapTable data={ userdata } 
+        <BootstrapTable data={ this.state.userData } 
                 bordered={ false } 
                 hover={ true }
                 options={ tableOptions}
