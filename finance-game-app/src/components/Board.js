@@ -72,6 +72,7 @@ export default class Board extends Component {
       this.state = {
         toggle: false,
         userData: [],
+        factionData: [],
       };
   }
 
