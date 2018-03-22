@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
-import { userdata } from '../data/user-data';
-import { factiondata } from '../data/faction-data';
+//import { userdata } from '../data/user-data';
+//import { factiondata } from '../data/faction-data';
 import { Label } from "react-bootstrap";
 import getLevelImage from '../helpers/getLevelImage';
 import getFactionImage from '../helpers/getFactionImage';
@@ -15,9 +15,9 @@ import '../../node_modules/react-toggle-switch/dist/css/switch.min.css';
 
 var i = 0 ; 
 
-function imageFormatter(cell, row){
+/*function imageFormatter(cell, row){
   return (<img style={{width:80}} src={cell} className="leaderAvatar" alt="Avatar"/>)
-}
+}*/
 
 function makeDefaultImage(cell, row){
 	i = i + 1; 
@@ -79,7 +79,10 @@ export default class Board extends Component {
   componentDidMount(){
     fetch('/user-data')
       .then(res => res.json())
-      .then(userData => this.setState({ userData }));
+      .then(userData => this.setState({ userData }))
+    fetch('/faction-data')
+      .then(res => res.json())
+      .then(factionData => this.setState({ factionData}))
   }
 
   toggleSwitch = () => {
@@ -160,7 +163,7 @@ export default class Board extends Component {
       defaultSortOrder: 'desc',
       };
     return(
-        <BootstrapTable data={ factiondata } 
+        <BootstrapTable data={ this.state.factionData } 
                 bordered={ false } 
                 hover={ true }
                 options={ tableOptions}
