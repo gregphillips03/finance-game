@@ -2,14 +2,16 @@ import React, { Component } from "react";
 import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
 import { userdata } from '../data/user-data';
 import { factiondata } from '../data/faction-data';
-import { Label, Badge } from "react-bootstrap";
+import { Label } from "react-bootstrap";
 import getLevelImage from '../helpers/getLevelImage';
 import getFactionImage from '../helpers/getFactionImage';
+import Switch from 'react-toggle-switch'; 
 import MaleFace1 from "../images/faces-male/A01.png"; 
 import MaleFace2 from "../images/faces-male/A02.png"; 
 import FemFace1 from "../images/faces-female/FA01.png";
 import FemFace2 from "../images/faces-female/FA02.png"; 
 import '../../node_modules/react-bootstrap-table/dist/react-bootstrap-table-all.min.css';
+import '../../node_modules/react-toggle-switch/dist/css/switch.min.css'; 
 
 var i = 0 ; 
 
@@ -37,11 +39,11 @@ function makeDefaultImage(cell, row){
 }
 
 function levelToImage(cell, row){
-	return(<img src={getLevelImage(cell)} height="50" width="50" />)
+	return(<img src={getLevelImage(cell)} height="50" width="50" alt="level"/>)
 }
 
 function factionToImage(cell, row){
-  return(<img src={getFactionImage(cell)} height="80" width="80" />)
+  return(<img src={getFactionImage(cell)} height="80" width="80" alt="faction" />)
 }
 
 function userNameFormatter(cell, row){
@@ -70,7 +72,7 @@ export default class Board extends Component {
   constructor(props) {
     super(props);
       this.state = {
-        toggle: false,
+        toggle: true,
       };
   }
 
@@ -187,9 +189,12 @@ export default class Board extends Component {
 
   render() {
     return (
-      this.state.toggle === false
-      ? this.renderByPlayerLeaderBoard()
-      : this.renderByFactionLeaderBoard()
+      <div className="leaderBoardSwitch">
+        <Switch onClick={this.toggleSwitch} on={this.state.toggle}/>
+        {this.state.toggle === false
+        ? this.renderByPlayerLeaderBoard()
+        : this.renderByFactionLeaderBoard()}
+      </div>
     );
   }
 }

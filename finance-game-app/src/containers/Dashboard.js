@@ -46,7 +46,6 @@ handleClickExternal(mode){
           <div className="card-progressbar">
             <CircularProgressbar percentage={90} 
                                  initialAnimation={ true }
-                                 styles={{ path: { stroke: 'rgba(190, 190, 255, ${90/100})'}}}
                                  className="progbarcomponent" />
             <h2>Total Progress</h2>
             <p>My Total Progress</p>
@@ -57,7 +56,6 @@ handleClickExternal(mode){
           <div className="card-progressbar">
             <CircularProgressbar percentage={42} 
                                  initialAnimation={ true }
-                                 styles={{ path: { stroke: 'rgba(190, 190, 255, ${90/100})'}}}
                                  className="progbarcomponent" />
             <h2>More Progress</h2>
             <p>More of My Progress</p>

@@ -17,52 +17,52 @@ import level16 from "../images/levels/level16.png";
 
 const getLevelImage = n => {
 	var img;
-	if(n==1){
+	if(n===1){
 		img =  level1; 
 	}
-	if(n==2){
+	if(n===2){
 		img =  level2; 
 	}
-	if(n==3){
+	if(n===3){
 		img =  level3; 
 	}
-	if(n==4){
+	if(n===4){
 		img =  level4; 
 	}
-	if(n==5){
+	if(n===5){
 		img =  level5; 
 	}
-	if(n==6){
+	if(n===6){
 		img =  level6; 
 	}
-	if(n==7){
+	if(n===7){
 		img =  level7; 
 	}
-	if(n==8){
+	if(n===8){
 		img =  level8; 
 	}
-	if(n==9){
+	if(n===9){
 		img =  level9; 
 	}
-	if(n==10){
+	if(n===10){
 		img =  level10; 
 	}
-	if(n==11){
+	if(n===11){
 		img =  level11; 
 	}
-	if(n==12){
+	if(n===12){
 		img =  level12; 
 	}
-	if(n==13){
+	if(n===13){
 		img =  level13; 
 	}
-	if(n==14){
+	if(n===14){
 		img =  level14; 
 	}
-	if(n==15){
+	if(n===15){
 		img =  level15; 
 	}
-	if(n==16){
+	if(n===16){
 		img =  level16; 
 	}
 
