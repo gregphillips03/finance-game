@@ -90,6 +90,8 @@ export default class Board extends Component {
       nextPage: <i className='glyphicon glyphicon-chevron-right' />,
       firstPage: <i className='glyphicon glyphicon-step-backward' />,
       lastPage: <i className='glyphicon glyphicon-step-forward' />, 
+      defaultSortName: 'level',
+      defaultSortOrder: 'desc',
       printToolBar: false,
       clearSearch: false,
       noDataText: "Your Search Parameters are weak...\n Use the Force!",
@@ -148,7 +150,7 @@ export default class Board extends Component {
   renderByFactionLeaderBoard(){
     const tableOptions = {
       printToolBar: false,
-      defaultSortName: 'alltime',
+      defaultSortName: 'level',
       defaultSortOrder: 'desc',
       };
     return(
@@ -164,6 +166,11 @@ export default class Board extends Component {
                      searchable={ false }
                      export={ false }
                      dataFormat={factionToImage}>Avatar</TableHeaderColumn>
+          <TableHeaderColumn dataField='level' width='15%' 
+                     dataFormat={levelToImage}
+                     headerAlign='center'
+                     dataAlign='center'
+                     dataSort={true}>Level</TableHeaderColumn>
           <TableHeaderColumn dataField='factionname' 
                      width='30%' 
                      headerAlign='center'
