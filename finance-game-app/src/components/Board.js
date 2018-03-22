@@ -72,7 +72,7 @@ export default class Board extends Component {
   constructor(props) {
     super(props);
       this.state = {
-        toggle: true,
+        toggle: false,
       };
   }
 
@@ -92,8 +92,6 @@ export default class Board extends Component {
       lastPage: <i className='glyphicon glyphicon-step-forward' />, 
       printToolBar: false,
       clearSearch: false,
-      defaultSortName: 'level',
-      defaultSortOrder: 'desc',
       noDataText: "Your Search Parameters are weak...\n Use the Force!",
       sizePerPageList: [ 10, 20, 30 ],
       sizePerPage: 10,
@@ -190,7 +188,7 @@ export default class Board extends Component {
   render() {
     return (
       <div className="leaderBoardSwitch">
-        <Switch onClick={this.toggleSwitch} on={this.state.toggle}/>
+        <Switch onClick={this.toggleSwitch} on={!this.state.toggle}/>
         {this.state.toggle === false
         ? this.renderByPlayerLeaderBoard()
         : this.renderByFactionLeaderBoard()}
