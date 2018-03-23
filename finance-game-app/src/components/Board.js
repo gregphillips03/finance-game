@@ -13,6 +13,8 @@ import FemFace2 from "../images/faces-female/FA02.png";
 import '../../node_modules/react-bootstrap-table/dist/react-bootstrap-table-all.min.css';
 import '../../node_modules/react-toggle-switch/dist/css/switch.min.css';
 import { fetchUserData, fetchFactionData } from "../libs/backendLib.js";
+import ReactLoading from 'react-loading';
+
 var i = 0 ; 
 
 /*function imageFormatter(cell, row){
@@ -82,6 +84,7 @@ export default class Board extends Component {
       .then(userData => this.setState({ userData }))
     fetchFactionData()
       .then(factionData => this.setState({ factionData}))
+    this.setState({ boardIsRendering: false }); 
   }
 
   toggleSwitch = () => {
@@ -204,7 +207,12 @@ export default class Board extends Component {
     return (
       <div className="leaderBoardSwitch">
         <Switch onClick={this.toggleSwitch} on={!this.state.toggle}/>
-        {this.state.toggle === false
+        {this.state.boardIsRendering === true
+          ? <div align='center'>
+            <ReactLoading type='spin' color='blue'/>
+            </div>
+          : 
+        this.state.toggle === false
         ? this.renderByPlayerLeaderBoard()
         : this.renderByFactionLeaderBoard()}
       </div>
