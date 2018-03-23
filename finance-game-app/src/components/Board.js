@@ -11,7 +11,7 @@ import MaleFace2 from "../images/faces-male/A02.png";
 import FemFace1 from "../images/faces-female/FA01.png";
 import FemFace2 from "../images/faces-female/FA02.png"; 
 import '../../node_modules/react-bootstrap-table/dist/react-bootstrap-table-all.min.css';
-import '../../node_modules/react-toggle-switch/dist/css/switch.min.css'; 
+import '../../node_modules/react-toggle-switch/dist/css/switch.min.css';
 
 var i = 0 ; 
 
