@@ -53,3 +53,31 @@ export async function fetchMoreProgress() {
     console.error(error);
   }
 }
+
+export async function fetchRedProgress() {
+  try {
+    let res = await fetch(
+      '/progress', 
+      {method: 'GET'}
+    );
+    let resJson = await res.json();
+    resJson = resJson.map(item => item.red)
+    return resJson;
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+export async function fetchGreenProgress() {
+  try {
+    let res = await fetch(
+      '/progress', 
+      {method: 'GET'}
+    );
+    let resJson = await res.json();
+    resJson = resJson.map(item => item.green)
+    return resJson;
+  } catch (error) {
+    console.error(error);
+  }
+}

@@ -11,7 +11,7 @@ import Shop from "../images/storefront.png";
 import Trophy from "../images/goals-icon.png"; 
 import 'react-circular-progressbar/dist/styles.css'; 
 import 'react-sweet-progress/lib/style.css'; 
-import { fetchTotalProgress, fetchMoreProgress } from "../libs/backendLib.js";
+import { fetchTotalProgress, fetchMoreProgress, fetchRedProgress, fetchGreenProgress } from "../libs/backendLib.js";
 
 export default class Dashboard extends Component {
     constructor(props) {
@@ -21,6 +21,8 @@ export default class Dashboard extends Component {
       mode: "",
       totalProgress: 0,
       moreProgress: 0,
+      redProgress: 0, 
+      greenProgress: 0, 
     };
   }
 
@@ -29,6 +31,10 @@ componentDidMount(){
     .then(totalProgress => this.setState({ totalProgress }))
   fetchMoreProgress()
     .then(moreProgress => this.setState({ moreProgress}))
+  fetchRedProgress()
+    .then(redProgress => this.setState({ redProgress }))
+  fetchGreenProgress()
+    .then(greenProgress => this.setState({ greenProgress }))
 }
 
 handleClick(mode){
@@ -74,7 +80,7 @@ handleClickExternal(mode){
 
           <div className="column" id="column-click">
           <div className="card-progressbar">
-            <Progress percent={31}
+            <Progress percent={this.state.redProgress}
                       type="circle"
                       status="error" 
                       width={200}
@@ -86,7 +92,7 @@ handleClickExternal(mode){
 
           <div className="column" id="column-click">
           <div className="card-progressbar">
-            <Progress percent={82}
+            <Progress percent={this.state.greenProgress}
                       type="circle"
                       status="success" 
                       width={200}
