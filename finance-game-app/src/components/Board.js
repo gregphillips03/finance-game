@@ -215,7 +215,7 @@ export default class Board extends Component {
       <div className="leaderBoardSwitch">
         {this.state.boardIsRendering === true
           ? <div align='center'>
-              <ReactLoading type='spin' color='blue'/>
+              <ReactLoading type='bars' color='#b3bbc9'/>
             </div>
           : 
         this.state.toggle === false
