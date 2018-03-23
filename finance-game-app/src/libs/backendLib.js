@@ -3,7 +3,8 @@
 export async function fetchUserData() {
   try {
     let res = await fetch(
-      '/user-data'
+      '/user-data', 
+      {method: 'GET'}
     );
     let resJson = await res.json();
     return resJson;
@@ -15,9 +16,38 @@ export async function fetchUserData() {
 export async function fetchFactionData() {
   try {
     let res = await fetch(
-      '/faction-data'
+      '/faction-data', 
+      {method: 'GET'}
     );
     let resJson = await res.json();
+    return resJson;
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+export async function fetchTotalProgress() {
+  try {
+    let res = await fetch(
+      '/progress', 
+      {method: 'GET'}
+    );
+    let resJson = await res.json();
+    resJson = resJson.map(item => item.total)
+    return resJson;
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+export async function fetchMoreProgress() {
+  try {
+    let res = await fetch(
+      '/progress', 
+      {method: 'GET'}
+    );
+    let resJson = await res.json();
+    resJson = resJson.map(item => item.more)
     return resJson;
   } catch (error) {
     console.error(error);
