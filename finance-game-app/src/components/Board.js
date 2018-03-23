@@ -73,6 +73,7 @@ export default class Board extends Component {
         toggle: false,
         userData: [],
         factionData: [],
+        boardIsRendering: true, 
       };
   }
 
