@@ -12,7 +12,7 @@ import FemFace1 from "../images/faces-female/FA01.png";
 import FemFace2 from "../images/faces-female/FA02.png"; 
 import '../../node_modules/react-bootstrap-table/dist/react-bootstrap-table-all.min.css';
 import '../../node_modules/react-toggle-switch/dist/css/switch.min.css';
-
+import { fetchUserData, fetchFactionData } from "../libs/backendLib.js";
 var i = 0 ; 
 
 /*function imageFormatter(cell, row){
@@ -77,11 +77,9 @@ export default class Board extends Component {
   }
 
   componentDidMount(){
-    fetch('/user-data')
-      .then(res => res.json())
+    fetchUserData()
       .then(userData => this.setState({ userData }))
-    fetch('/faction-data')
-      .then(res => res.json())
+    fetchFactionData()
       .then(factionData => this.setState({ factionData}))
   }
 
