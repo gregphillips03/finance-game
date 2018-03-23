@@ -81,3 +81,16 @@ export async function fetchGreenProgress() {
     console.error(error);
   }
 }
+
+export async function addFactionPlay(data){ //data should be a key value pair
+  try {
+    await fetch(
+      '/someroute', //change this on the backend
+      {method: 'POST', 
+       body: JSON.stringify(data), 
+       headers: new Headers({'Content-Type': 'application/json'})
+      }).then(res => res.json())
+  } catch (error){
+    console.error(error); 
+  }
+}
