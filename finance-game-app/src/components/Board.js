@@ -84,7 +84,8 @@ export default class Board extends Component {
       .then(userData => this.setState({ userData }))
     fetchFactionData()
       .then(factionData => this.setState({ factionData}))
-    this.setState({ boardIsRendering: false }); 
+    //test function for the spinner logic//
+    setTimeout(() => this.setState({ boardIsRendering: false }), 3000);
   }
 
   toggleSwitch = () => {
