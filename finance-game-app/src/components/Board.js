@@ -113,6 +113,8 @@ export default class Board extends Component {
       paginationShowsTotal: true, 
       };
     return(
+        <div>
+        <Switch onClick={this.toggleSwitch} on={!this.state.toggle}/>
         <BootstrapTable data={ this.state.userData } 
                 bordered={ false } 
                 hover={ true }
@@ -156,6 +158,7 @@ export default class Board extends Component {
                      dataAlign='center'
                      export={ false }>Action</TableHeaderColumn>
       </BootstrapTable>
+      </div>
       );
   }
 
@@ -166,6 +169,8 @@ export default class Board extends Component {
       defaultSortOrder: 'desc',
       };
     return(
+        <div>
+        <Switch onClick={this.toggleSwitch} on={!this.state.toggle}/>
         <BootstrapTable data={ this.state.factionData } 
                 bordered={ false } 
                 hover={ true }
@@ -201,21 +206,22 @@ export default class Board extends Component {
                      dataAlign='center'
                      dataSort={true}>Recent XP</TableHeaderColumn>
       </BootstrapTable>
+      </div>
       );
   }
 
   render() {
     return (
       <div className="leaderBoardSwitch">
-        <Switch onClick={this.toggleSwitch} on={!this.state.toggle}/>
         {this.state.boardIsRendering === true
           ? <div align='center'>
-            <ReactLoading type='spin' color='blue'/>
+              <ReactLoading type='spin' color='blue'/>
             </div>
           : 
         this.state.toggle === false
-        ? this.renderByPlayerLeaderBoard()
-        : this.renderByFactionLeaderBoard()}
+        ? this.renderByPlayerLeaderBoard() 
+        : this.renderByFactionLeaderBoard()
+        }
       </div>
     );
   }
