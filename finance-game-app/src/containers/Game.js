@@ -48,7 +48,7 @@ handleClick(world){
           <div className="column" id="column-click" onClick={()=>this.handleClick('endor')}>
           <div className="card-planet">
             <img src={Endor} alt="planet"/>
-            <h2>Endor</h2>
+            <h2>1. Endor</h2>
             <p>The Forest Moon</p>
           </div>
           </div>
@@ -56,7 +56,7 @@ handleClick(world){
           <div className="column" id="column-click" onClick={()=>this.handleClick('voss')}>
           <div className="card-planet">
             <img src={Voss} alt="planet"/>
-            <h2>Voss</h2>
+            <h2>2. Voss</h2>
             <p>Alot Like Terra</p>
           </div>
           </div>
@@ -64,7 +64,7 @@ handleClick(world){
           <div className="column" id="column-click" onClick={()=>this.handleClick('hoth')}>
           <div className="card-planet">
             <img src={Hoth} alt="planet"/>
-            <h2>Hoth</h2>
+            <h2>3. Hoth</h2>
             <p>It's Cold Outside</p>
           </div>
           </div>
@@ -72,7 +72,7 @@ handleClick(world){
           <div className="column" id="column-click" onClick={()=>this.handleClick('tatooine')}>
           <div className="card-planet">
             <img src={Tatooine} alt="planet"/>
-            <h2>Tatooine</h2>
+            <h2>4. Tatooine</h2>
             <p>Anakin's Stomping Ground</p>
           </div>
           </div>
