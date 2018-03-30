@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "PORT=3001 RDS_USERNAME=masterkey RDS_PASSWORD=chickendog123 RDS_PORT=5432 RDS_HOSTNAME=finance-game-db.cm0naqqd1wbd.us-west-2.rds.amazonaws.com RDS_DBNAME=postgres node ./bin/www"
+    "start": "PORT=3001 RDS_USERNAME=masterkey RDS_PASSWORD=chickendog123 RDS_PORT=5432 RDS_HOSTNAME=finance-game-db.cm0naqqd1wbd.us-west-2.rds.amazonaws.com RDS_DBNAME=gregtest node ./bin/www"
   },
   "dependencies": {
     "cookie-parser": "~1.4.3",

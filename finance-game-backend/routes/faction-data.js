@@ -16,7 +16,7 @@ var pool = new Pool(config);
 router.get('/', function(req, res, next) {
   try
   {
-    var response = await pool.query('SELECT factionname, alltime, recent, level FROM faction-data-test'); 
+    var response = await pool.query('SELECT factionname, alltime, recent, level FROM faction_data_test'); 
     let faction_data = response.rows.map(function(item){
       return {factionname: item.factionname, 
               alltime: item.alltime,
