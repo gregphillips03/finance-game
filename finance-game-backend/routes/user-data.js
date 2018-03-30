@@ -1,5 +1,14 @@
 var express = require('express');
 var router = express.Router();
+const { Pool, Client } = require('pg')
+
+const pool = new Pool({
+  user: 'masterkey',
+  host: 'finance-game-db.cm0naqqd1wbd.us-west-2.rds.amazonaws.com',
+  database: 'gregtest',
+  password: 'chickendog123',
+  port: 5432,
+})
 
 /* GET user data listing. */
 router.get('/', function(req, res, next) {
