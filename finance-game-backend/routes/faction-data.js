@@ -7,28 +7,13 @@ var config = {
   user     : process.env.RDS_USERNAME,
   password : process.env.RDS_PASSWORD,
   port     : process.env.RDS_PORT, 
-  dbname   : process.env.RDS_DBNAME,
+  dbname   : process.env.RDS_DBNAME
 }
 
-var pool = new Pool(config);
+var connection = new Pool(config);
 
 /* GET faction data listing. */
 router.get('/', function(req, res, next) {
-  try
-  {
-    var response = await pool.query('SELECT factionname, alltime, recent, level FROM faction_data_test'); 
-    let faction_data = response.rows.map(function(item){
-      return {factionname: item.factionname, 
-              alltime: item.alltime,
-              recent: item.recent, 
-              level: item.level};
-    });
-    console.log('Success! Pulled out the test faction data.');
-    res.json({faction_data});
-  }
-  catch(e)
-  {
-    console.log('Shit! Something fucked up!'); 
     res.json([
     {
       "factionname": "Jedi Order",
@@ -55,7 +40,6 @@ router.get('/', function(req, res, next) {
       "level": 1, 
     },
   ]);
-  }
 });
 
 module.exports = router;
