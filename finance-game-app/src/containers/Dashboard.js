@@ -27,13 +27,13 @@ export default class Dashboard extends Component {
   }
 
 componentDidMount(){
-  fetchTotalProgress()
+  fetchTotalProgress(sessionStorage.getItem('currentUserEmail'))
     .then(totalProgress => this.setState({ totalProgress }))
-  fetchMoreProgress()
+  fetchMoreProgress(sessionStorage.getItem('currentUserEmail'))
     .then(moreProgress => this.setState({ moreProgress}))
-  fetchRedProgress()
+  fetchRedProgress(sessionStorage.getItem('currentUserEmail'))
     .then(redProgress => this.setState({ redProgress }))
-  fetchGreenProgress()
+  fetchGreenProgress(sessionStorage.getItem('currentUserEmail'))
     .then(greenProgress => this.setState({ greenProgress }))
 }
 

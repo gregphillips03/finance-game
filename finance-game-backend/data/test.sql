@@ -1,5 +1,7 @@
 DROP database if EXISTS gregtest; 
+DROP ROLE if EXISTS testkey; 
 CREATE database gregtest; 
+CREATE ROLE testkey WITH LOGIN PASSWORD '33Niuh7$32gh78';
 
 \c gregtest;
 
@@ -21,7 +23,19 @@ CREATE TABLE user_data_test
 	recent integer, 
 	level integer, 
 	lastupdate timestamptz NOT NULL DEFAULT now(),
-	PRIMARY KEY(id)
+	PRIMARY KEY(username)
+);
+
+CREATE TABLE user_progress_test
+(
+	id SERIAL,
+	username VARCHAR(50) NOT NULL,
+	total integer, 
+	more integer, 
+	red integer, 
+	green integer, 
+	PRIMARY KEY (username),
+	FOREIGN KEY (username) REFERENCES user_data_test(username)
 );
 
 SET TIME ZONE 'America/New_York'; 
@@ -64,6 +78,10 @@ INSERT INTO user_data_test (username, alltime, recent, level, lastupdate) VALUES
 	('your.mom@mail.umw.edu', 1, 1, 1, '2018-03-30 10:10:00-04'),
 	('harley.quinn@mail.umw.edu', 10001, 10001, 5, '2018-03-02 12:01:30-04'); 
 
-GRANT SELECT, DELETE, UPDATE, INSERT ON faction_data_test TO masterkey;
-GRANT SELECT, DELETE, UPDATE, INSERT ON user_data_test TO masterkey; 
-GRANT USAGE, SELECT ON ALL SEQUENCES IN SCHEMA public TO masterkey;
+INSERT INTO user_progress_test (username, total, more, red, green) VALUES
+	('wphilli2@mail.umw.edu', 88, 50, 25, 90); 
+
+GRANT SELECT, DELETE, UPDATE, INSERT ON faction_data_test TO masterkey, testkey;
+GRANT SELECT, DELETE, UPDATE, INSERT ON user_data_test TO masterkey, testkey;
+GRANT SELECT, DELETE, UPDATE, INSERT ON user_progress_test TO masterkey, testkey;
+GRANT USAGE, SELECT ON ALL SEQUENCES IN SCHEMA public TO masterkey, testkey;
