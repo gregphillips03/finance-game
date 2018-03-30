@@ -19,7 +19,7 @@ router.get('/', async function(req, res, next) {
     level: item.level};});
     console.log(data); 
     res.json(data); 
-    pool.end()
+    //pool.end()
 });
 
 module.exports = router;
