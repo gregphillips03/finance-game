@@ -24,7 +24,7 @@ CREATE TABLE user_data_test
 	PRIMARY KEY(id)
 );
 
-SET timezone = 'America/New_York'; 
+SET TIME ZONE 'America/New_York'; 
 
 INSERT INTO faction_data_test (factionname, alltime, recent, level) VALUES
 	('Jedi Order', 20000, 2000, 1), 
