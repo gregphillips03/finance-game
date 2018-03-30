@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "PORT=3001 DBUSERNAME=masterkey DBPASSWORD=chickendog123 node ./bin/www"
+    "start": "PORT=3001 RDS_USERNAME=masterkey RDS_PASSWORD=chickendog123 RDS_PORT=5432 RDS_HOSTNAME=finance-game-db.cm0naqqd1wbd.us-west-2.rds.amazonaws.com RDS_DBNAME=postgres node ./bin/www"
   },
   "dependencies": {
     "cookie-parser": "~1.4.3",
@@ -11,6 +11,7 @@
     "express": "~4.16.0",
     "http-errors": "~1.6.2",
     "jade": "~1.11.0",
-    "morgan": "~1.9.0"
+    "morgan": "~1.9.0",
+    "pg": "^7.4.1"
   }
 }
