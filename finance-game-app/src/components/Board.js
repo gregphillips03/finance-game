@@ -81,7 +81,7 @@ export default class Board extends Component {
 
   componentDidMount(){
     fetchUserData()
-      .then(userData => this.setState({ userData }))
+      .then(userData => this.setState({ userData })); 
     fetchFactionData()
       .then(factionData => this.setState({ factionData}))
     //test function for the spinner logic//

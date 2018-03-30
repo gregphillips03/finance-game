@@ -1,19 +1,20 @@
 var express = require('express');
 var router = express.Router();
-var Pool = require('pg').Pool; 
+var pgp = require('pg-promise')(/*options*/);
 
-var config = {
+var connection = {
   host     : process.env.RDS_HOSTNAME,
+  port     : process.env.RDS_PORT,
   user     : process.env.RDS_USERNAME,
   password : process.env.RDS_PASSWORD,
-  port     : process.env.RDS_PORT, 
   dbname   : process.env.RDS_DBNAME
 }
 
-var connection = new Pool(config);
-
 /* GET faction data listing. */
 router.get('/', function(req, res, next) {
+  var db = pgp(connection); // database instance;
+  console.log("AAAAAaaaagghahaahhhhhh!!!!"); 
+  db.any('SELECT factionname, alltime, recent, level FROM gregtest').then(item => {res.json(item)}).catch(error => {console.log(error)});  
     res.json([
     {
       "factionname": "Jedi Order",
@@ -40,6 +41,7 @@ router.get('/', function(req, res, next) {
       "level": 1, 
     },
   ]);
+  res.end(); 
 });
 
 module.exports = router;

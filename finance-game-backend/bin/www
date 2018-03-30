@@ -26,6 +26,11 @@ var server = http.createServer(app);
  */
 
 server.listen(port);
+console.log("Listening on port: " + port); 
+console.log("RDS Host: " + process.env.RDS_HOSTNAME);
+console.log("RDS Port: " + process.env.RDS_PORT);
+console.log("RDS Database: " + process.env.RDS_DBNAME);
+console.log("RDS Username: " + process.env.RDS_USERNAME);
 server.on('error', onError);
 server.on('listening', onListening);
 
