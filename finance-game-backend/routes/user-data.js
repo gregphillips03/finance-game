@@ -18,7 +18,6 @@ router.get('/', async function(req, res, next) {
     recent: item.recent, 
     level: item.level,
     lastupdate: item.lastupdate};});
-    console.log(data); 
     res.json(data); 
 });
 

@@ -11,6 +11,7 @@ var userDataRouter = require('./routes/user-data');
 var factionDataRouter = require('./routes/faction-data'); 
 var progressRouter = require('./routes/progress'); 
 var factionPercRouter = require('./routes/get-faction-percentage'); 
+var addFactionPlayRouter = require('./routes/add-faction-play');
 
 var app = express();
 
@@ -31,6 +32,7 @@ app.use('/user-data', userDataRouter);
 app.use('/faction-data', factionDataRouter); 
 app.use('/progress', progressRouter); 
 app.use('/get-faction-percentage', factionPercRouter); 
+app.use('/add-faction-play', addFactionPlayRouter); 
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

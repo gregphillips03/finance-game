@@ -13,14 +13,12 @@ const pool = new Pool({
 /* GET progress data. */
 router.get('/', async function(req, res, next) {
   var user = req.query.user;  
-  console.log(user); 
   var response = await pool.query('SELECT total, ' +
   	'more, red, green FROM user_progress_test WHERE username = $1', [user]); 
   var data = response.rows.map(function(item){return {total: item.total, 
     more: item.more, 
     red: item.red,
     green: item.green};});
-    console.log(data); 
     res.json(data); 
 });
 

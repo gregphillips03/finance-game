@@ -5,7 +5,7 @@ import Resist from "../images/resistance-logo.png";
 import Empire from "../images/empire-logo.png";
 import Jedi from "../images/jedi-logo.png";
 import Rogue from "../images/rogue-logo.png";
-import { fetchFactionPercentage } from "../libs/backendLib.js";
+import { fetchFactionPercentage, addFactionPlay } from "../libs/backendLib.js";
 
 
 export default class Faction extends Component {
@@ -35,7 +35,13 @@ componentDidMount(){
 
 handleClick(faction){
   localStorage.setItem('currentUserFaction', faction); 
-  //need a hook here to count number of times user has played as a faction
+  var send; 
+  var f = localStorage.getItem('currentUserFaction'); 
+  if(f==='Rebel'){send = 'Rebel Alliance'};
+  if(f==='Empire'){send = 'Galactic Empire'}; 
+  if(f==='Jedi'){send = 'Jedi Order'}; 
+  if(f==='Rogue'){send = 'Rogue'};  
+  addFactionPlay({faction: send, amount: 1});
   this.props.history.push("/dashboard");  
 }
 

@@ -99,7 +99,7 @@ export async function fetchFactionPercentage(faction){
 export async function addFactionPlay(data){ //data should be a key value pair
   try {
     await fetch(
-      '/someroute', //change this on the backend
+      '/add-faction-play',
       {method: 'POST', 
        body: JSON.stringify(data), 
        headers: new Headers({'Content-Type': 'application/json'})

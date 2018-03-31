@@ -17,9 +17,7 @@ router.get('/', async function(req, res, next) {
     alltime: item.alltime, 
     recent: item.recent, 
     level: item.level};});
-    console.log(data); 
     res.json(data); 
-    //pool.end()
 });
 
 module.exports = router;

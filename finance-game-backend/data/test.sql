@@ -70,10 +70,10 @@ INSERT INTO faction_data_test (factionname, alltime, recent, level) VALUES
 	('Rogue', 50000, 5000, 4);
 
 INSERT INTO faction_plays (factionname, numplays) VALUES
-	('Jedi Order', 200), 
-	('Rebel Alliance', 400), 
-	('Galactic Empire', 100), 
-	('Rogue', 300); 
+	('Jedi Order', 202), 
+	('Rebel Alliance', 404), 
+	('Galactic Empire', 101), 
+	('Rogue', 303); 
 
 INSERT INTO user_data_test (username, alltime, recent, level, lastupdate) VALUES
 	('wphilli2@mail.umw.edu', 98765, 12345, 10, '2018-03-30 12:09:30-04'), 
