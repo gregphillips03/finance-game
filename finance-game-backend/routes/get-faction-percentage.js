@@ -22,7 +22,7 @@ router.get('/', async function(req, res, next) {
 
   console.log(totalPlays); 
   console.log(factionPlays);
-  var perc = (factionPlays / totalPlays)*100; 
+  var perc = parseInt((factionPlays / totalPlays)*100); 
   var data = [{percentage: perc}]; 
   console.log(data)
   res.json(data); 
