@@ -82,6 +82,20 @@ export async function fetchGreenProgress(user) {
   }
 }
 
+export async function fetchFactionPercentage(faction){
+  try{
+    let res = await fetch(
+      '/get-faction-percentage?faction=' + faction,
+      {method: 'GET'}
+    );
+    let resJson = await res.json(); 
+    resJson = resJson.map(item => item.percentage)
+    return resJson; 
+  } catch (error){
+    console.error(error); 
+  }
+}
+
 export async function addFactionPlay(data){ //data should be a key value pair
   try {
     await fetch(

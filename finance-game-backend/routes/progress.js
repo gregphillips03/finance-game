@@ -12,7 +12,6 @@ const pool = new Pool({
 
 /* GET progress data. */
 router.get('/', async function(req, res, next) {
-  //var user = req.query.user;
   var user = req.query.user;  
   console.log(user); 
   var response = await pool.query('SELECT total, ' +

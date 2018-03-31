@@ -5,6 +5,7 @@ import Resist from "../images/resistance-logo.png";
 import Empire from "../images/empire-logo.png";
 import Jedi from "../images/jedi-logo.png";
 import Rogue from "../images/rogue-logo.png";
+import { fetchFactionPercentage } from "../libs/backendLib.js";
 
 
 export default class Faction extends Component {
@@ -14,12 +15,23 @@ export default class Faction extends Component {
     this.state = {
       isLoading: false,
       faction: "",
-      rebelAmount: 30, 
-      jediAmount: 20,
-      empireAmount: 20,
-      rogueAmount: 30, 
+      rebelAmount: 0, 
+      jediAmount: 0 ,
+      empireAmount: 0,
+      rogueAmount: 0, 
     };
   }
+
+componentDidMount(){
+  fetchFactionPercentage("Rebel Alliance")
+    .then(rebelAmount => this.setState({ rebelAmount }));
+  fetchFactionPercentage("Galactic Empire")
+    .then(empireAmount => this.setState({ empireAmount }));
+  fetchFactionPercentage("Jedi Order")
+    .then(jediAmount => this.setState({ jediAmount})); 
+  fetchFactionPercentage("Rogue")
+    .then(rogueAmount => this.setState({ rogueAmount}));
+}
 
 handleClick(faction){
   localStorage.setItem('currentUserFaction', faction); 

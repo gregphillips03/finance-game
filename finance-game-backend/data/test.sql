@@ -5,6 +5,13 @@ CREATE ROLE testkey WITH LOGIN PASSWORD '33Niuh7$32gh78';
 
 \c gregtest;
 
+CREATE TABLE faction_types
+(
+	id SERIAL, 
+	factionname VARCHAR(20),
+	PRIMARY KEY (factionname)
+); 
+
 CREATE TABLE faction_data_test
 (
 	id SERIAL,
@@ -12,7 +19,8 @@ CREATE TABLE faction_data_test
 	alltime integer, 
 	recent integer, 
 	level integer,
-	PRIMARY KEY(id)
+	PRIMARY KEY(id),
+	FOREIGN KEY (factionname) REFERENCES faction_types(factionname)
 );
 
 CREATE TABLE user_data_test
@@ -38,13 +46,34 @@ CREATE TABLE user_progress_test
 	FOREIGN KEY (username) REFERENCES user_data_test(username)
 );
 
+CREATE TABLE faction_plays
+(
+	id SERIAL,
+	factionname VARCHAR(20), 
+	numplays integer, 
+	PRIMARY KEY (factionname),
+	FOREIGN KEY (factionname) REFERENCES faction_types(factionname)
+);
+
 SET TIME ZONE 'America/New_York'; 
+
+INSERT INTO faction_types (factionname) VALUES
+	('Jedi Order'), 
+	('Rebel Alliance'), 
+	('Galactic Empire'), 
+	('Rogue');
 
 INSERT INTO faction_data_test (factionname, alltime, recent, level) VALUES
 	('Jedi Order', 20000, 2000, 1), 
 	('Rebel Alliance', 30000, 3000, 2), 
 	('Galactic Empire', 40000, 4000, 3), 
 	('Rogue', 50000, 5000, 4);
+
+INSERT INTO faction_plays (factionname, numplays) VALUES
+	('Jedi Order', 200), 
+	('Rebel Alliance', 400), 
+	('Galactic Empire', 100), 
+	('Rogue', 300); 
 
 INSERT INTO user_data_test (username, alltime, recent, level, lastupdate) VALUES
 	('wphilli2@mail.umw.edu', 98765, 12345, 10, '2018-03-30 12:09:30-04'), 
@@ -86,4 +115,6 @@ INSERT INTO user_progress_test (username, total, more, red, green) VALUES
 GRANT SELECT, DELETE, UPDATE, INSERT ON faction_data_test TO masterkey, testkey;
 GRANT SELECT, DELETE, UPDATE, INSERT ON user_data_test TO masterkey, testkey;
 GRANT SELECT, DELETE, UPDATE, INSERT ON user_progress_test TO masterkey, testkey;
+GRANT SELECT ON faction_types TO masterkey, testkey; 
+GRANT SELECT, UPDATE ON faction_plays TO masterkey, testkey; 
 GRANT USAGE, SELECT ON ALL SEQUENCES IN SCHEMA public TO masterkey, testkey;

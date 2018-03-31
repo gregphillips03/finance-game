@@ -20,7 +20,6 @@ router.get('/', async function(req, res, next) {
     lastupdate: item.lastupdate};});
     console.log(data); 
     res.json(data); 
-    //pool.end()
 });
 
 module.exports = router;
