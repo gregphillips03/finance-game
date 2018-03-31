@@ -13,7 +13,7 @@ const pool = new Pool({
 /* GET progress data. */
 router.get('/', async function(req, res, next) {
   //var user = req.query.user;
-  var user = 'wphilli2@mail.umw.edu';  
+  var user = req.query.user;  
   console.log(user); 
   var response = await pool.query('SELECT total, ' +
   	'more, red, green FROM user_progress_test WHERE username = $1', [user]); 

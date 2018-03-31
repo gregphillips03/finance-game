@@ -76,10 +76,12 @@ INSERT INTO user_data_test (username, alltime, recent, level, lastupdate) VALUES
 	('bon.jovi@mail.umw.edu', 3009, 309, 2, '2018-03-30 17:21:00-04'), 
 	('charlie.sheen@mail.umw.edu', 3010, 310, 2, '2018-03-30 16:22:00-04'), 
 	('your.mom@mail.umw.edu', 1, 1, 1, '2018-03-30 10:10:00-04'),
+	('admin@example.com', 1, 2, 3, '2018-03-30 10:10:00-04'),
 	('harley.quinn@mail.umw.edu', 10001, 10001, 5, '2018-03-02 12:01:30-04'); 
 
 INSERT INTO user_progress_test (username, total, more, red, green) VALUES
-	('wphilli2@mail.umw.edu', 88, 50, 25, 90); 
+	('wphilli2@mail.umw.edu', 88, 50, 25, 90),
+	('admin@example.com', 63, 34, 10, 87);
 
 GRANT SELECT, DELETE, UPDATE, INSERT ON faction_data_test TO masterkey, testkey;
 GRANT SELECT, DELETE, UPDATE, INSERT ON user_data_test TO masterkey, testkey;

@@ -29,10 +29,8 @@ export async function fetchFactionData() {
 export async function fetchTotalProgress(user) {
   try {
     let res = await fetch(
-      '/progress', 
-      {method: 'GET', 
-       params: {user: 'wphilli2@mail.umw.edu'}
-      }
+      '/progress?user=' + user, 
+      {method: 'GET'}
     );
     let resJson = await res.json();
     resJson = resJson.map(item => item.total)
@@ -45,7 +43,7 @@ export async function fetchTotalProgress(user) {
 export async function fetchMoreProgress(user) {
   try {
     let res = await fetch(
-      '/progress', 
+      '/progress?user=' + user, 
       {method: 'GET'}
     );
     let resJson = await res.json();
@@ -59,7 +57,7 @@ export async function fetchMoreProgress(user) {
 export async function fetchRedProgress(user) {
   try {
     let res = await fetch(
-      '/progress', 
+      '/progress?user=' + user, 
       {method: 'GET'}
     );
     let resJson = await res.json();
@@ -73,7 +71,7 @@ export async function fetchRedProgress(user) {
 export async function fetchGreenProgress(user) {
   try {
     let res = await fetch(
-      '/progress', 
+      '/progress?user=' + user, 
       {method: 'GET'}
     );
     let resJson = await res.json();
