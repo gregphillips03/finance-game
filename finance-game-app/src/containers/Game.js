@@ -84,7 +84,7 @@ handleClick(world){
           <div className="column" id="column-click" onClick={()=>this.handleClick('kamino')}>
           <div className="card-planet">
             <img src={Kamino} alt="planet"/>
-            <h2>Kamino</h2>
+            <h2>5. Kamino</h2>
             <p>Need Description</p>
           </div>
           </div>
@@ -92,7 +92,7 @@ handleClick(world){
           <div className="column" id="column-click" onClick={()=>this.handleClick('voss')}>
           <div className="card-planet">
             <img src={NalHutta} alt="planet"/>
-            <h2>Nal Hutta</h2>
+            <h2>6. Nal Hutta</h2>
             <p>Need Description</p>
           </div>
           </div>
@@ -100,7 +100,7 @@ handleClick(world){
           <div className="column" id="column-click" onClick={()=>this.handleClick('korriban')}>
           <div className="card-planet">
             <img src={Korriban} alt="planet"/>
-            <h2>Korriban</h2>
+            <h2>7. Korriban</h2>
             <p>Need Description</p>
           </div>
           </div>
@@ -108,7 +108,7 @@ handleClick(world){
           <div className="column" id="column-click" onClick={()=>this.handleClick('belsavis')}>
           <div className="card-planet">
             <img src={Belsavis} alt="planet"/>
-            <h2>Belsavis</h2>
+            <h2>8. Belsavis</h2>
             <p>Need Description</p>
           </div>
           </div>
@@ -120,7 +120,7 @@ handleClick(world){
           <div className="column" id="column-click" onClick={()=>this.handleClick('coruscant')}>
           <div className="card-planet">
             <img src={Coruscant} alt="planet"/>
-            <h2>Coruscant</h2>
+            <h2>9. Coruscant</h2>
             <p>Need Description</p>
           </div>
           </div>
@@ -128,7 +128,7 @@ handleClick(world){
           <div className="column" id="column-click" onClick={()=>this.handleClick('quesh')}>
           <div className="card-planet">
             <img src={Quesh} alt="planet"/>
-            <h2>Quesh</h2>
+            <h2>10. Quesh</h2>
             <p>Need Description</p>
           </div>
           </div>
@@ -136,7 +136,7 @@ handleClick(world){
           <div className="column" id="column-click" onClick={()=>this.handleClick('sabarene')}>
           <div className="card-planet">
             <img src={Sabarene} alt="planet"/>
-            <h2>Sabarene</h2>
+            <h2>11. Sabarene</h2>
             <p>Need Description</p>
           </div>
           </div>
@@ -144,7 +144,7 @@ handleClick(world){
           <div className="column" id="column-click" onClick={()=>this.handleClick('foron')}>
           <div className="card-planet">
             <img src={Foron} alt="planet"/>
-            <h2>Foron</h2>
+            <h2>12. Foron</h2>
             <p>Need Description</p>
           </div>
           </div>
@@ -156,7 +156,7 @@ handleClick(world){
           <div className="column" id="column-click" onClick={()=>this.handleClick('narshaddaa')}>
           <div className="card-planet">
             <img src={NarShaddaa} alt="planet"/>
-            <h2>Nar Shaddaa</h2>
+            <h2>13. Nar Shaddaa</h2>
             <p>Need Description</p>
           </div>
           </div>
@@ -164,7 +164,7 @@ handleClick(world){
           <div className="column" id="column-click" onClick={()=>this.handleClick('phorskuhii')}>
           <div className="card-planet">
             <img src={Phorskuhii} alt="planet"/>
-            <h2>Phorskuh II</h2>
+            <h2>14. Phorskuh II</h2>
             <p>Need Description</p>
           </div>
           </div>
@@ -172,7 +172,7 @@ handleClick(world){
           <div className="column" id="column-click" onClick={()=>this.handleClick('deathstar')}>
           <div className="card-planet">
             <img src={DeathStar} alt="planet"/>
-            <h2>Death Star</h2>
+            <h2>15. Death Star</h2>
             <p>Need Description</p>
           </div>
           </div>
@@ -180,7 +180,7 @@ handleClick(world){
           <div className="column" id="column-click" onClick={()=>this.handleClick('deathstarii')}>
           <div className="card-planet">
             <img src={DeathStarii} alt="planet"/>
-            <h2>Death Star II</h2>
+            <h2>16. Death Star II</h2>
             <p>Need Description</p>
           </div>
           </div>
