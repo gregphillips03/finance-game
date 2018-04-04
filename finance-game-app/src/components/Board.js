@@ -84,8 +84,8 @@ export default class Board extends Component {
       .then(userData => this.setState({ userData })); 
     fetchFactionData()
       .then(factionData => this.setState({ factionData}))
-    //test function for the spinner logic//
-    //setTimeout(() => this.setState({ boardIsRendering: false }), 3000);
+    //test function for the spinner logic
+    //setTimeout(() => this.setState({ boardIsRendering: false }), 3000)
     .then(this.setState({boardIsRendering: false})); 
   }
 
