@@ -154,7 +154,8 @@ INSERT INTO worlds_unlocked (username, worldsequence) VALUES
 	('wphilli2@mail.umw.edu', 0), 
 	('admin@example.com', 0), 
 	('kmorgan6@mail.umw.edu', 0),
-	('kmorgan6@mail.umw.edu', 1);
+	('kmorgan6@mail.umw.edu', 1), 
+	('kmorgan6@mail.umw.edu', 15);
 
 GRANT SELECT, DELETE, UPDATE, INSERT ON faction_data_test TO masterkey, testkey;
 GRANT SELECT, DELETE, UPDATE, INSERT ON user_data_test TO masterkey, testkey;
