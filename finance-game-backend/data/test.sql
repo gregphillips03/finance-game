@@ -71,6 +71,11 @@ INSERT INTO faction_types (factionname) VALUES
 	('Galactic Empire'), 
 	('Rogue');
 
+INSERT INTO world_types (worldname, worldsequence) VALUES
+	('Endor', 0), 
+	('Voss', 1), 
+	('Hoth', 2); 
+
 INSERT INTO faction_data_test (factionname, alltime, recent, level) VALUES
 	('Jedi Order', 20000, 2000, 1), 
 	('Rebel Alliance', 30000, 3000, 2), 
