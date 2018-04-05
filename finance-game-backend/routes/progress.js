@@ -1,14 +1,9 @@
 var express = require('express');
 var router = express.Router();
 const { Pool, Client } = require('pg')
+var dbconfig = require("../data/dbconfig"); 
 
-const pool = new Pool({
-  user: 'masterkey',
-  host: 'finance-game-db.cm0naqqd1wbd.us-west-2.rds.amazonaws.com',
-  database: 'gregtest',
-  password: 'chickendog123',
-  port: 5432,
-})
+const pool = new Pool(dbconfig); 
 
 /* GET progress data. */
 router.get('/', async function(req, res, next) {
