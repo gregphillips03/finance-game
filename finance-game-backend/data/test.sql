@@ -17,7 +17,7 @@ CREATE TABLE world_types
 	id SERIAL, 
 	worldname VARCHAR(20),
 	worldsequence integer, 
-	PRIMARY KEY (worldname)
+	PRIMARY KEY (worldsequence)
 ); 
 
 CREATE TABLE faction_data_test
@@ -40,6 +40,16 @@ CREATE TABLE user_data_test
 	level integer, 
 	lastupdate timestamptz NOT NULL DEFAULT now(),
 	PRIMARY KEY(username)
+);
+
+CREATE TABLE worlds_unlocked
+(
+	id SERIAL, 
+	username VARCHAR(50), 
+	worldsequence integer, 
+	FOREIGN KEY (username) REFERENCES user_data_test(username),
+	FOREIGN KEY (worldsequence) REFERENCES world_types(worldsequence),
+	PRIMARY KEY (username, worldsequence)
 );
 
 CREATE TABLE user_progress_test
@@ -127,9 +137,16 @@ INSERT INTO user_progress_test (username, total, more, red, green) VALUES
 	('admin@example.com', 63, 34, 10, 87),
 	('kmorgan6@mail.umw.edu', 50, 95, 20, 45);
 
+INSERT INTO worlds_unlocked (username, worldsequence) VALUES
+	('wphilli2@mail.umw.edu', 0), 
+	('admin@example.com', 0), 
+	('kmorgan6@mail.umw.edu', 0),
+	('kmorgan6@mail.umw.edu', 1);
+
 GRANT SELECT, DELETE, UPDATE, INSERT ON faction_data_test TO masterkey, testkey;
 GRANT SELECT, DELETE, UPDATE, INSERT ON user_data_test TO masterkey, testkey;
 GRANT SELECT, DELETE, UPDATE, INSERT ON user_progress_test TO masterkey, testkey;
-GRANT SELECT ON faction_types TO masterkey, testkey; 
+GRANT SELECT, DELETE, UPDATE, INSERT ON worlds_unlocked TO masterkey, testkey; 
+GRANT SELECT ON faction_types, world_types TO masterkey, testkey; 
 GRANT SELECT, UPDATE ON faction_plays TO masterkey, testkey; 
 GRANT USAGE, SELECT ON ALL SEQUENCES IN SCHEMA public TO masterkey, testkey;
