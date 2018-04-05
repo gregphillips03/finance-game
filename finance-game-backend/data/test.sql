@@ -12,6 +12,13 @@ CREATE TABLE faction_types
 	PRIMARY KEY (factionname)
 ); 
 
+CREATE TABLE world_types
+(
+	id SERIAL, 
+	worldname VARCHAR(20), 
+	PRIMARY KEY (worldname)
+); 
+
 CREATE TABLE faction_data_test
 (
 	id SERIAL,
