@@ -15,7 +15,8 @@ CREATE TABLE faction_types
 CREATE TABLE world_types
 (
 	id SERIAL, 
-	worldname VARCHAR(20), 
+	worldname VARCHAR(20),
+	worldsequence integer, 
 	PRIMARY KEY (worldname)
 ); 
 
