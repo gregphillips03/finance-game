@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const { Pool, Client } = require('pg')
+var dbconfig = require("../data/dbconfig"); 
 
 const pool = new Pool({
   user: 'masterkey',
