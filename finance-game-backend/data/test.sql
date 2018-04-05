@@ -84,7 +84,20 @@ INSERT INTO faction_types (factionname) VALUES
 INSERT INTO world_types (worldname, worldsequence) VALUES
 	('Endor', 0), 
 	('Voss', 1), 
-	('Hoth', 2); 
+	('Hoth', 2), 
+	('Tatooine', 3), 
+	('Kamino', 4), 
+	('Nal Hutta', 5), 
+	('Korriban', 6), 
+	('Belsavis', 7),
+	('Coruscant', 8), 
+	('Quesh', 9), 
+	('Sabarene', 10), 
+	('Foron', 11), 
+	('Nar Shaddaa', 12), 
+	('Phorskuh II', 13), 
+	('Death Star', 14), 
+	('Death Star II', 15); 
 
 INSERT INTO faction_data_test (factionname, alltime, recent, level) VALUES
 	('Jedi Order', 20000, 2000, 1), 
