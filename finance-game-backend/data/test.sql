@@ -100,7 +100,7 @@ INSERT INTO world_types (worldname, worldsequence) VALUES
 	('Death Star II', 15); 
 
 INSERT INTO faction_data_test (factionname, alltime, recent, level) VALUES
-	('Jedi Order', 20000, 2000, 1), 
+	('Jedi Order', 120000, 2000, 1), 
 	('Rebel Alliance', 30000, 3000, 2), 
 	('Galactic Empire', 40000, 4000, 3), 
 	('Rogue', 50000, 5000, 4);
@@ -112,7 +112,7 @@ INSERT INTO faction_plays (factionname, numplays) VALUES
 	('Rogue', 303); 
 
 INSERT INTO user_data_test (username, alltime, recent, level, lastupdate) VALUES
-	('wphilli2@mail.umw.edu', 98765, 12345, 10, '2018-03-30 12:09:30-04'), 
+	('wphilli2@mail.umw.edu', 198765, 12345, 10, '2018-03-30 12:09:30-04'), 
 	('was.belle@mail.umw.edu', 252525, 5252, 11, '2018-03-29 12:10:25-04'), 
 	('wash.reagan@mail.umw.edu', 12345, 54321, 12, '2018-02-10 15:15:30-04'), 
 	('bat.man@mail.umw.edu', 383838, 22222, 13, '2018-03-10 09:09:09-04'), 

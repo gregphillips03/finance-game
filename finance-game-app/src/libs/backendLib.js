@@ -4,7 +4,8 @@ export async function fetchUserData() {
   try {
     let res = await fetch(
       '/user-data', 
-      {method: 'GET'}
+      {method: 'GET', 
+       headers: new Headers({'Cache-Control': 'no-cache, no-store, must-revalidate'})}
     );
     let resJson = await res.json();
     return resJson;
@@ -17,7 +18,9 @@ export async function fetchFactionData() {
   try {
     let res = await fetch(
       '/faction-data', 
-      {method: 'GET'}
+      {method: 'GET', 
+       headers: new Headers({'Cache-Control': 'no-cache, no-store, must-revalidate'})
+      }
     );
     let resJson = await res.json();
     return resJson;
@@ -30,7 +33,9 @@ export async function fetchTotalProgress(user) {
   try {
     let res = await fetch(
       '/progress?user=' + user, 
-      {method: 'GET'}
+      {method: 'GET', 
+       headers: new Headers({'Cache-Control': 'no-cache, no-store, must-revalidate'})
+      }
     );
     let resJson = await res.json();
     resJson = resJson.map(item => item.total)
@@ -44,7 +49,9 @@ export async function fetchMoreProgress(user) {
   try {
     let res = await fetch(
       '/progress?user=' + user, 
-      {method: 'GET'}
+      {method: 'GET', 
+       headers: new Headers({'Cache-Control': 'no-cache, no-store, must-revalidate'})
+      }
     );
     let resJson = await res.json();
     resJson = resJson.map(item => item.more)
@@ -58,7 +65,9 @@ export async function fetchRedProgress(user) {
   try {
     let res = await fetch(
       '/progress?user=' + user, 
-      {method: 'GET'}
+      {method: 'GET', 
+       headers: new Headers({'Cache-Control': 'no-cache, no-store, must-revalidate'})
+      }
     );
     let resJson = await res.json();
     resJson = resJson.map(item => item.red)
@@ -72,7 +81,9 @@ export async function fetchGreenProgress(user) {
   try {
     let res = await fetch(
       '/progress?user=' + user, 
-      {method: 'GET'}
+      {method: 'GET', 
+       headers: new Headers({'Cache-Control': 'no-cache, no-store, must-revalidate'})
+      }
     );
     let resJson = await res.json();
     resJson = resJson.map(item => item.green)
@@ -86,7 +97,9 @@ export async function fetchFactionPercentage(faction){
   try{
     let res = await fetch(
       '/get-faction-percentage?faction=' + faction,
-      {method: 'GET'}
+      {method: 'GET', 
+       headers: new Headers({'Cache-Control': 'no-cache, no-store, must-revalidate'})
+      }
     );
     let resJson = await res.json(); 
     resJson = resJson.map(item => item.percentage)

@@ -79,11 +79,9 @@ export default class Board extends Component {
       };
   }
 
-  componentDidMount(){
-    fetchUserData()
-      .then(userData => this.setState({ userData })); 
-    fetchFactionData()
-      .then(factionData => this.setState({ factionData}))
+  async componentDidMount(){
+    await fetchUserData().then(userData => this.setState({ userData })); 
+    await fetchFactionData().then(factionData => this.setState({ factionData}))
     //test function for the spinner logic//
     //setTimeout(() => this.setState({ boardIsRendering: false }), 3000);
     .then(this.setState({boardIsRendering: false})); 
