@@ -12,21 +12,21 @@ export const questions = [
     "correct": "A company's total earnings or profit."
   },
   {
-    "question": <span>What do I do with all this money?</span>,
+    "question": <span>What is Annual Percentage Rate?</span>,
     "answers": [
-      <span>Give it to me.</span>,
-      <span>Prented you never asked that silly question.</span>,
-      <span>Money is the root of all evil.</span>,
-      <span>Spend it as quickly as you can and then tell everyone about it.</span>
+      <span>The annual percentage at which you must pay back loans.</span>,
+      <span>The annual cost of loan, including fees and interest.</span>,
+      <span>The annual percentage of a return.</span>,
+      <span>The ideal annual percentage of income that should be invested.</span>
     ],
-    "correct": "Spend it as quickly as you can and then tell everyone about it."
+    "correct": "The annual cost of loan, including fees and interest."
   },
   {
-    "question": <span>What is a closure?</span>,
+    "question": <span>What is compound interest?</span>,
     "answers": [
-      <span>It's knowing that the front door is closed.</span>,
-      <span>It's being really close to that special someone.</span>,
-      <span>The act of closing something or someone out.</span>,
+      <span>Interest calculated on initial principal.</span>,
+      <span>Interest calculated on accumulated interest.</span>,
+      <span>When the rate of return is applied to the entire balance.</span>,
       <span>All of the above.</span>
     ],
     "correct": "All of the above."
