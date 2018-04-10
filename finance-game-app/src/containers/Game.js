@@ -50,6 +50,7 @@ handleClick(world){
             <img src={Endor} alt="planet"/>
             <h2>1. Endor</h2>
             <p>The Forest Moon</p>
+            <p>//make this say something based on database//</p>
           </div>
           </div>
 

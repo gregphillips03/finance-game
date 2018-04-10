@@ -2,14 +2,14 @@ import React from 'react';
 
 export const questions = [
   {
-    "question": <span>How much wood could a woodchuck chuck, if a woodchuck could chuck wood?</span>,
+    "question": <span>What is net income?</span>,
     "answers": [
-      <span>Enough to be dangerous.</span>,
-      <span>It really depends on the type of wood, and the level of voracity.</span>,
-      <span>It's pretty much a null point.</span>,
-      <span>The previous two answers are correct.</span>
+      <span>A company's total earnings or profit.</span>,
+      <span>An individual's yearly salary.</span>,
+      <span>Paying off debt in regular intervals.</span>,
+      <span>Annual cost of a loan.</span>
     ],
-    "correct": "Enough to be dangerous."
+    "correct": "A company's total earnings or profit."
   },
   {
     "question": <span>What do I do with all this money?</span>,
