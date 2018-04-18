@@ -4,7 +4,7 @@ import Quiz from './Quiz';
 import Results from './Results';
 import shuffleQuestions from '../helpers/shuffleQuestions';
 import shuffleAnswers from '../helpers/shuffleAnswers';
-import { questions } from '../data/endor-quiz-data';
+import { questions } from '../data/quiz-data';
 
 class QuizApp extends Component {
   constructor(props) {
