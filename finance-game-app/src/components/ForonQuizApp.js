@@ -6,7 +6,7 @@ import shuffleQuestions from '../helpers/shuffleQuestions';
 import shuffleAnswers from '../helpers/shuffleAnswers';
 import { questions } from '../data/foron-quiz-data';
 
-class QuizApp extends Component {
+class ForonQuizApp extends Component {
   constructor(props) {
     super(props);
 
@@ -168,12 +168,12 @@ class QuizApp extends Component {
   }
 }
 
-QuizApp.defaultProps = {
+ForonQuizApp.defaultProps = {
   totalQuestions: questions.length
 };
 
-QuizApp.propTypes = {
+ForonQuizApp.propTypes = {
   totalQuestions: PropTypes.number.isRequired
 };
 
-export default QuizApp;
+export default ForonQuizApp;

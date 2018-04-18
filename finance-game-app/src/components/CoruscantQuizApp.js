@@ -6,7 +6,7 @@ import shuffleQuestions from '../helpers/shuffleQuestions';
 import shuffleAnswers from '../helpers/shuffleAnswers';
 import { questions } from '../data/coruscant-quiz-data';
 
-class QuizApp extends Component {
+class CoruscantQuizApp extends Component {
   constructor(props) {
     super(props);
 
@@ -168,12 +168,12 @@ class QuizApp extends Component {
   }
 }
 
-QuizApp.defaultProps = {
+CoruscantQuizApp.defaultProps = {
   totalQuestions: questions.length
 };
 
-QuizApp.propTypes = {
+CoruscantQuizApp.propTypes = {
   totalQuestions: PropTypes.number.isRequired
 };
 
-export default QuizApp;
+export default CoruscantQuizApp;

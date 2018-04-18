@@ -6,7 +6,7 @@ import shuffleQuestions from '../helpers/shuffleQuestions';
 import shuffleAnswers from '../helpers/shuffleAnswers';
 import { questions } from '../data/kamino-quiz-data';
 
-class QuizApp extends Component {
+class KaminoQuizApp extends Component {
   constructor(props) {
     super(props);
 
@@ -168,12 +168,12 @@ class QuizApp extends Component {
   }
 }
 
-QuizApp.defaultProps = {
+KaminoQuizApp.defaultProps = {
   totalQuestions: questions.length
 };
 
-QuizApp.propTypes = {
+KaminoQuizApp.propTypes = {
   totalQuestions: PropTypes.number.isRequired
 };
 
-export default QuizApp;
+export default KaminoQuizApp;

@@ -6,7 +6,7 @@ import shuffleQuestions from '../helpers/shuffleQuestions';
 import shuffleAnswers from '../helpers/shuffleAnswers';
 import { questions } from '../data/hoth-quiz-data';
 
-class QuizApp extends Component {
+class HothQuizApp extends Component {
   constructor(props) {
     super(props);
 
@@ -168,12 +168,12 @@ class QuizApp extends Component {
   }
 }
 
-QuizApp.defaultProps = {
+HothQuizApp.defaultProps = {
   totalQuestions: questions.length
 };
 
-QuizApp.propTypes = {
+HothQuizApp.propTypes = {
   totalQuestions: PropTypes.number.isRequired
 };
 
-export default QuizApp;
+export default HothQuizApp;
