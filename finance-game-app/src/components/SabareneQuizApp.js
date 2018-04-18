@@ -168,11 +168,11 @@ class SabereneQuizApp extends Component {
   }
 }
 
-QuizApp.defaultProps = {
+SabareneQuizApp.defaultProps = {
   totalQuestions: questions.length
 };
 
-QuizApp.propTypes = {
+SabareneQuizApp.propTypes = {
   totalQuestions: PropTypes.number.isRequired
 };
 
