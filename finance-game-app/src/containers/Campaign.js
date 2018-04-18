@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./Campaign.css";
 import { Label } from "react-bootstrap"; 
-
+import CampaignGame from '../components/CampaignGame';
 
 export default class Campaign extends Component {
     constructor(props) {
