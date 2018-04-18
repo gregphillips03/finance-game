@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import Quiz from './Quiz';
 import Results from './Results';
 import shuffleQuestions from '../helpers/shuffleQuestions';
-import { questions } from '../data/quiz-data';
+import shuffleAnswers from '../helpers/shuffleAnswers';
+import { questions } from '../data/endor-quiz-data';
 
 class QuizApp extends Component {
   constructor(props) {
@@ -29,6 +30,7 @@ class QuizApp extends Component {
     const maxQuestions = Math.min(totalQuestions, questions.length);
     const QUESTIONS = shuffleQuestions(questions, maxQuestions);
 
+
     this.setState({
       questions: QUESTIONS,
       maxQuestions: maxQuestions,
@@ -49,6 +51,8 @@ class QuizApp extends Component {
     const isCorrect = questions[0].correct === e.target.textContent;
     console.log(e.target);
     const answersFromUser = userAnswers.slice();
+    //console.log(answersFromUser);
+    //console.log(userAnswers);
     const currentStep = step - 1;
     const tries = answersFromUser[currentStep].tries;
 
@@ -98,7 +102,6 @@ class QuizApp extends Component {
       setTimeout(this.nextStep, 1750);
 
     }
-
     else if (e.target.nodeName === 'LI') {
       e.target.style.pointerEvents = 'none';
       e.target.classList.add('wrong');
@@ -140,7 +143,6 @@ class QuizApp extends Component {
   restartQuiz() {
     window.location.reload();
   }
-
   render() {
     const { step, questions, userAnswers, maxQuestions, score, timeleft, isPaused } = this.state;
 
