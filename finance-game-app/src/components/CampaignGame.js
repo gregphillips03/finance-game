@@ -1,4 +1,4 @@
-var MOVE_TYPE = {ATTACK: 0, HEAL: 1};
+/*var MOVE_TYPE = {ATTACK: 0, HEAL: 1};
 
 var CREATURES = [{name: "Bulbasaur", 
 	hp: 60, moves: [{name: 'Vine Whip', damage: 30, accuracy: .9},
@@ -169,4 +169,4 @@ $(document).ready(function() {
         	enterCommand();
     	}
 	});
-});
+});*/
