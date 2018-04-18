@@ -4,9 +4,9 @@ import Quiz from './Quiz';
 import Results from './Results';
 import shuffleQuestions from '../helpers/shuffleQuestions';
 import shuffleAnswers from '../helpers/shuffleAnswers';
-import { questions } from '../data/quiz-data';
+import { questions } from '../data/tattoine-quiz-data';
 
-class QuizApp extends Component {
+class TattooineQuizApp extends Component {
   constructor(props) {
     super(props);
 
@@ -176,4 +176,4 @@ QuizApp.propTypes = {
   totalQuestions: PropTypes.number.isRequired
 };
 
-export default QuizApp;
+export default TattooineQuizApp;

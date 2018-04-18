@@ -6,7 +6,7 @@ import shuffleQuestions from '../helpers/shuffleQuestions';
 import shuffleAnswers from '../helpers/shuffleAnswers';
 import { questions } from '../data/deathstar2-quiz-data';
 
-class QuizApp extends Component {
+class Deathstar2QuizApp extends Component {
   constructor(props) {
     super(props);
 
@@ -176,4 +176,4 @@ QuizApp.propTypes = {
   totalQuestions: PropTypes.number.isRequired
 };
 
-export default QuizApp;
+export default Deathstar2QuizApp;
