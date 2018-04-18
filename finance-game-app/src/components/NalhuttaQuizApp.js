@@ -168,11 +168,11 @@ class NalhuttaQuizApp extends Component {
   }
 }
 
-QuizApp.defaultProps = {
+NalhuttaQuizApp.defaultProps = {
   totalQuestions: questions.length
 };
 
-QuizApp.propTypes = {
+NalhuttaQuizApp.propTypes = {
   totalQuestions: PropTypes.number.isRequired
 };
 

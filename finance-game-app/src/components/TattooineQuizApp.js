@@ -168,11 +168,11 @@ class TattooineQuizApp extends Component {
   }
 }
 
-QuizApp.defaultProps = {
+TattooineQuizApp.defaultProps = {
   totalQuestions: questions.length
 };
 
-QuizApp.propTypes = {
+TattooineQuizApp.propTypes = {
   totalQuestions: PropTypes.number.isRequired
 };
 

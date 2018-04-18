@@ -168,11 +168,11 @@ class PhorskuhQuizApp extends Component {
   }
 }
 
-QuizApp.defaultProps = {
+PhorskuhQuizApp.defaultProps = {
   totalQuestions: questions.length
 };
 
-QuizApp.propTypes = {
+PhorskuhQuizApp.propTypes = {
   totalQuestions: PropTypes.number.isRequired
 };
 

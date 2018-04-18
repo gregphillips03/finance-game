@@ -168,11 +168,11 @@ class VossQuizApp extends Component {
   }
 }
 
-QuizApp.defaultProps = {
+VossQuizApp.defaultProps = {
   totalQuestions: questions.length
 };
 
-QuizApp.propTypes = {
+VossQuizApp.propTypes = {
   totalQuestions: PropTypes.number.isRequired
 };
 

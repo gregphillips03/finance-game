@@ -4,9 +4,9 @@ import Quiz from './Quiz';
 import Results from './Results';
 import shuffleQuestions from '../helpers/shuffleQuestions';
 import shuffleAnswers from '../helpers/shuffleAnswers';
-import { questions } from '../data/narshaddaa-quiz-data';
+import { questions } from '../data/kamino-quiz-data';
 
-class NarshaddaaQuizApp extends Component {
+class KaminoQuizApp extends Component {
   constructor(props) {
     super(props);
 
@@ -168,12 +168,12 @@ class NarshaddaaQuizApp extends Component {
   }
 }
 
-NarshaddaaQuizApp.defaultProps = {
+QuizApp.defaultProps = {
   totalQuestions: questions.length
 };
 
-NarshaddaaQuizApp.propTypes = {
+QuizApp.propTypes = {
   totalQuestions: PropTypes.number.isRequired
 };
 
-export default NarshaddaQuizApp;
+export default KaminoQuizApp;

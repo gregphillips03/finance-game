@@ -168,11 +168,11 @@ class QueshQuizApp extends Component {
   }
 }
 
-QuizApp.defaultProps = {
+QueshQuizApp.defaultProps = {
   totalQuestions: questions.length
 };
 
-QuizApp.propTypes = {
+QueshQuizApp.propTypes = {
   totalQuestions: PropTypes.number.isRequired
 };
 

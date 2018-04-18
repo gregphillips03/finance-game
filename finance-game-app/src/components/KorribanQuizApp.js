@@ -168,11 +168,11 @@ class KorribanQuizApp extends Component {
   }
 }
 
-QuizApp.defaultProps = {
+KorribanQuizApp.defaultProps = {
   totalQuestions: questions.length
 };
 
-QuizApp.propTypes = {
+KorribanQuizApp.propTypes = {
   totalQuestions: PropTypes.number.isRequired
 };
 
