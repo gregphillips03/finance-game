@@ -25,11 +25,11 @@ class QuizApp extends Component {
     this.noTimeLeft = this.noTimeLeft.bind(this); 
   }
 
-  async componentWillMount() {
-    await const { totalQuestions } = this.props;
-    await const maxQuestions = Math.min(totalQuestions, questions.length);
-    await QUESTIONS = shuffleAnswers(questions);
-    await QUESTIONS = shuffleQuestions(questions, maxQuestions);
+  componentWillMount() {
+    const { totalQuestions } = this.props;
+    const maxQuestions = Math.min(totalQuestions, questions.length);
+    //await QUESTIONS = shuffleAnswers(questions);
+    const QUESTIONS = shuffleQuestions(questions, maxQuestions);
 
 
     this.setState({
