@@ -4,7 +4,7 @@ import Quiz from './Quiz';
 import Results from './Results';
 import shuffleQuestions from '../helpers/shuffleQuestions';
 import shuffleAnswers from '../helpers/shuffleAnswers';
-import { questions } from '../data/quiz-data';
+import { questions } from '../data/endor-quiz-data';
 
 class QuizApp extends Component {
   constructor(props) {
@@ -28,6 +28,7 @@ class QuizApp extends Component {
   componentWillMount() {
     const { totalQuestions } = this.props;
     const maxQuestions = Math.min(totalQuestions, questions.length);
+    //await QUESTIONS = shuffleAnswers(questions);
     const QUESTIONS = shuffleQuestions(questions, maxQuestions);
 
 
