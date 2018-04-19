@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Quiz from './Quiz';
 import Results from './Results';
 import shuffleQuestions from '../helpers/shuffleQuestions';
-import shuffleAnswers from '../helpers/shuffleAnswers';
+
 import { questions } from '../data/deathstar2-quiz-data';
 
 class Deathstar2QuizApp extends Component {

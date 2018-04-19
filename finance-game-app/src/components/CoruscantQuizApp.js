@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import Quiz from './Quiz';
 import Results from './Results';
 import shuffleQuestions from '../helpers/shuffleQuestions';
-import shuffleAnswers from '../helpers/shuffleAnswers';
 import { questions } from '../data/coruscant-quiz-data';
 
 class CoruscantQuizApp extends Component {
