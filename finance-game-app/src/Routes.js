@@ -14,6 +14,7 @@ import Arena from "./containers/Arena";
 import LightningRound from "./containers/LightningRound"; 
 import LightningContainer from "./containers/LightningContainer";
 import Campaign from "./containers/Campaign"; 
+import CampaignContainer from "./containers/CampaignContainer";
 import Crafting from "./containers/Crafting";
 import Inventory from "./containers/Inventory";
 import Endor from "./containers/Endor";
@@ -36,6 +37,7 @@ export default ({ childProps }) =>
     <AuthenticatedRoute path="/game/endor/lightning" exact component={LightningRound} props={childProps} />
     <AuthenticatedRoute path="/game/endor/lightning/go" exact component={LightningContainer} props={childProps} />
     <AuthenticatedRoute path="/game/endor/campaign" exact component={Campaign} props={childProps} />
+    <AuthenticatedRoute path="/game/endor/campaign/go" exact component={CampaignContainer} props={childProps} />
     <AuthenticatedRoute path="/game/voss" exact component={Voss} props={childProps} />
     <AuthenticatedRoute path="/game/voss/arena" exact component={Arena} props={childProps} />
     <AuthenticatedRoute path="/game/voss/lightning" exact component={LightningRound} props={childProps} />
