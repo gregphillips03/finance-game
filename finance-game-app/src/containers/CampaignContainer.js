@@ -7,9 +7,9 @@ export default class CampaignContainer extends Component {
   render() {
     return (
       <div className="CampaignContainer">
-        {/*<div id="app">
-          <QuizApp totalQuestions={10} />
-        </div>*/}
+        <div className="lander">
+          <p>This is the campaign</p>
+        </div>
       </div>
     );
   }
