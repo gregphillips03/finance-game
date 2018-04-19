@@ -50,7 +50,6 @@ handleClick(world){
             <img src={Endor} alt="planet"/>
             <h2>Endor</h2>
             <p>The Forest Moon</p>
-            <p>//make this say something based on database//</p>
           </div>
           </div>
 
@@ -58,7 +57,7 @@ handleClick(world){
           <div className="card-planet">
             <img src={Voss} alt="planet"/>
             <h2>Voss</h2>
-            <p>Alot Like Terra</p>
+            <p>A lot Like Terra</p>
           </div>
           </div>
 
@@ -86,7 +85,7 @@ handleClick(world){
           <div className="card-planet">
             <img src={Kamino} alt="planet"/>
             <h2>Kamino</h2>
-            <p>Need Description</p>
+            <p>Clone Central</p>
           </div>
           </div>
 
@@ -94,7 +93,7 @@ handleClick(world){
           <div className="card-planet">
             <img src={NalHutta} alt="planet"/>
             <h2>Nal Hutta</h2>
-            <p>Need Description</p>
+            <p>It's Pretty Swampy</p>
           </div>
           </div>
 
@@ -102,7 +101,7 @@ handleClick(world){
           <div className="card-planet">
             <img src={Korriban} alt="planet"/>
             <h2>Korriban</h2>
-            <p>Need Description</p>
+            <p>Siths Only</p>
           </div>
           </div>
 
@@ -110,7 +109,7 @@ handleClick(world){
           <div className="card-planet">
             <img src={Belsavis} alt="planet"/>
             <h2>Belsavis</h2>
-            <p>Need Description</p>
+            <p>On the Outer Rim</p>
           </div>
           </div>
 
@@ -122,7 +121,7 @@ handleClick(world){
           <div className="card-planet">
             <img src={Coruscant} alt="planet"/>
             <h2>Coruscant</h2>
-            <p>Need Description</p>
+            <p>New York of Star Wars</p>
           </div>
           </div>
 
@@ -130,7 +129,7 @@ handleClick(world){
           <div className="card-planet">
             <img src={Quesh} alt="planet"/>
             <h2>Quesh</h2>
-            <p>Need Description</p>
+            <p>It's Poisonous Out Here</p>
           </div>
           </div>
 
@@ -138,7 +137,7 @@ handleClick(world){
           <div className="card-planet">
             <img src={Sabarene} alt="planet"/>
             <h2>Sabarene</h2>
-            <p>Need Description</p>
+            <p>Isolated, but Homey!</p>
           </div>
           </div>
 
@@ -146,7 +145,7 @@ handleClick(world){
           <div className="card-planet">
             <img src={Foron} alt="planet"/>
             <h2>Foron</h2>
-            <p>Need Description</p>
+            <p>Trade Hub</p>
           </div>
           </div>
 
@@ -158,7 +157,7 @@ handleClick(world){
           <div className="card-planet">
             <img src={NarShaddaa} alt="planet"/>
             <h2>Nar Shaddaa</h2>
-            <p>Need Description</p>
+            <p>Smuggler's Moon</p>
           </div>
           </div>
 
@@ -166,7 +165,7 @@ handleClick(world){
           <div className="card-planet">
             <img src={Phorskuhii} alt="planet"/>
             <h2>Phorskuh II</h2>
-            <p>Need Description</p>
+            <p>All Abandoned</p>
           </div>
           </div>
 
