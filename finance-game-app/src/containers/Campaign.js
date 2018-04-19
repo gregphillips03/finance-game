@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./Campaign.css";
 import { Label } from "react-bootstrap"; 
 import CampaignGame from '../components/CampaignGame';
+import Play from "../images/play.png";
 
 export default class Campaign extends Component {
     constructor(props) {
@@ -26,6 +27,17 @@ handleClick(campaignLocation){
           questions</Label> | <Label bsStyle="danger">battles enemies</Label> | <Label bsStyle="success">gains XP</Label> | 
           <Label bsStyle="success">levels up</Label>.</p>
           <p>As the user progresses through the campaign, the questions become <Label bsStyle="danger">harder</Label> and leveling up becomes more difficult.</p>
+        </div>
+
+        <div className="row">
+
+            <div className="column" id="column-click" onClick={()=>this.handleClick('campaign/go')}>
+            <div className="card-play">
+              <img src={Play} alt="play-logo"/>
+              <h2>Campaign</h2>
+              <p>Start Campaign</p>
+            </div>
+            </div>
         </div>
 
       </div>
